@@ -1,0 +1,105 @@
+<p>
+  <mat-toolbar>
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>books</mat-icon>
+      <span>Dijital Kütüphane</span>
+    </button>
+    <div class="container">
+      <input
+        class="search-input"
+        type="text"
+        matInput
+        placeholder="Kitap, yazar adı arayın"
+      />
+    </div>
+    <span class="example-spacer"></span>
+    <button
+      mat-icon-button
+      class="add-book-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>add_circle</mat-icon>
+      <span class="nav-item">Kitap Ekle</span>
+    </button>
+    <button
+      mat-icon-button
+      class="all-books-icon favorite-icon"
+      aria-label="Example icon-button with heart icon"
+    >
+      <mat-icon>library_books</mat-icon>
+      <span class="nav-item">Tüm Kitaplar</span>
+    </button>
+    <button
+      mat-icon-button
+      class="account-icon"
+      aria-label="Example icon-button with share icon"
+    >
+      <mat-icon>account_circle</mat-icon>
+      <span class="nav-item">Giriş Yap/Kayıt Ol</span>
+    </button>
+  </mat-toolbar>
+</p>
+
+<br />
+<!-- <div class="main-div">Ekranın Ortasına gelmeli</div> -->
+<img
+  class="login-image"
+  src="assets/images/books.jpg"
+  alt="Dijital Kütüphane"
+/>
+
+<form [formGroup]="requiredForm" novalidate class="login">
+  <h1 class="title-login">GİRİŞ YAP</h1>
+  <input
+    type="email"
+    name="email"
+    ng-model="email"
+    required
+    class="input form-control"
+    placeholder="E-posta"
+  />
+  <input
+    required
+    name="password"
+    class="input"
+    type="password"
+    ng-model="password"
+    placeholder="Şifre"
+  />
+  <mat-checkbox class="example-margin">Beni Hatırla</mat-checkbox>
+  <mat-checkbox class="example-margin">Şifremi Unuttum</mat-checkbox>
+  <br /><br />
+  <br /><br />
+  <button type="submit" class="login-button" mat-raised-button>
+    Giriş Yap
+  </button>
+</form>
+
+<div class="signup">
+  <h1 class="title-signup">KAYIT OL</h1>
+  <input class="input" type="text" placeholder="Ad*" />
+  <input class="input" type="text" placeholder="Soyad*" />
+  <input class="input" type="email" placeholder="E-posta*" />
+  <input class="input" type="password" placeholder="Şifre*" />
+  <input class="input" type="password" placeholder="Şifre tekrar*" />
+
+  <mat-checkbox class="example-margin"
+    >Sözleşmeyi okudum, kabul ediyorum.</mat-checkbox
+  ><br />
+  <mat-checkbox class="example-margin"
+    >Elektronik ileti almak istiyorum.</mat-checkbox
+  >
+  <button class="signup-button" mat-raised-button>Kayıt Ol</button>
+</div>
+
+<div class="footer">
+  <h2 class="title-mobile">Mobil Uygulamalar</h2>
+  <button mat-raised-button class="mobile-app">App Store</button>
+  <button class="mobile-app google-play" mat-raised-button>Google Play</button>
+  <h2 class="title-social">Sosyal Medya</h2>
+  <mat-icon class="social-icon-twitter">facebook</mat-icon>
+</div>
