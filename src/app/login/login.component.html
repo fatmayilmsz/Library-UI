@@ -54,31 +54,32 @@
 
 <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="login">
   <h1 class="title-login">{{ title_login }}</h1>
-  <span
-    style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
-    *ngIf="lemail && lemail.invalid && lemail.touched"
-    >*Lütfen e-posta giriniz.</span
-  >
+
   <input
     type="email"
-    ng-model="email"
+    [(ngModel)]="loginEmail"
     class="input form-control"
     formControlName="lemail"
     placeholder="E-posta"
   />
   <span
     style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
-    *ngIf="lpassword && lpassword.invalid && lpassword.touched"
-    >*Lütfen şifre giriniz.</span
+    *ngIf="lemail && lemail.invalid && lemail.touched"
+    >*Lütfen e-posta giriniz.</span
   >
+
   <input
     class="input"
     type="password"
-    ng-model="password"
+    [(ngModel)]="loginPassword"
     formControlName="lpassword"
     placeholder="Şifre"
   />
-
+  <span
+    style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
+    *ngIf="lpassword && lpassword.invalid && lpassword.touched"
+    >*Lütfen şifre giriniz.</span
+  >
   <div class="checkbox-div">
     <mat-checkbox class="example-margin checkbox-login"
       >Beni Hatırla</mat-checkbox
@@ -100,6 +101,14 @@
 
 <form [formGroup]="signupForm" class="signup">
   <h1 class="title-signup">{{ title_signup }}</h1>
+
+  <input
+    class="input"
+    [(ngModel)]="signupName"
+    formControlName="sname"
+    type="text"
+    placeholder="Ad"
+  />
   <span
     style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
     *ngIf="sname && sname.invalid && sname.touched"
@@ -107,11 +116,11 @@
   >
 
   <input
+    [(ngModel)]="signupLastname"
+    formControlName="slastname"
     class="input"
-    ng-model="name"
-    formControlName="sname"
     type="text"
-    placeholder="Ad"
+    placeholder="Soyad"
   />
   <span
     style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
@@ -120,11 +129,11 @@
   >
 
   <input
-    ng-model="lastname"
-    formControlName="slastname"
+    [(ngModel)]="signupEmail"
+    formControlName="semail"
     class="input"
-    type="text"
-    placeholder="Soyad"
+    type="email"
+    placeholder="E-posta"
   />
   <span
     style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
@@ -133,20 +142,7 @@
   >
 
   <input
-    ng-model="email"
-    formControlName="semail"
-    class="input"
-    type="email"
-    placeholder="E-posta"
-  />
-  <span
-    style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
-    *ngIf="spassword && spassword.invalid && spassword.touched"
-    >*Lütfen şifre giriniz.</span
-  >
-
-  <input
-    ng-model="password"
+    [(ngModel)]="signupPassword"
     formControlName="spassword"
     class="input"
     type="password"
@@ -154,12 +150,11 @@
   />
   <span
     style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
-    *ngIf="spasswordagain && spasswordagain.invalid && spasswordagain.touched"
-    >*Lütfen şifreyi tekrar giriniz.</span
+    *ngIf="spassword && spassword.invalid && spassword.touched"
+    >*Lütfen şifre giriniz.</span
   >
-
   <input
-    ng-model="passwordagain"
+    [(ngModel)]="signupPasswordAgain"
     formControlName="spasswordagain"
     class="input"
     type="password"
@@ -167,16 +162,29 @@
   />
   <span
     style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
+    *ngIf="spasswordagain && spasswordagain.invalid && spasswordagain.touched"
+    >*Lütfen şifreyi tekrar giriniz.</span
+  >
+  <span
+    style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
+    *ngIf="isTrue"
+    >*Şifreler aynı değil.</span
+  >
+
+  <mat-checkbox formControlName="scontract" class="example-margin"
+    >Sözleşmeyi okudum, kabul ediyorum.</mat-checkbox
+  >
+  <span
+    style="color: red; margin-left: 5%; font-size: 12px; margin-top: 0px"
     *ngIf="scontract && scontract.invalid && scontract.touched"
     >*Lütfen sözleşmeyi onaylayın.</span
   >
-  <mat-checkbox formControlName="scontract" class="example-margin"
-    >Sözleşmeyi okudum, kabul ediyorum.</mat-checkbox
-  ><br />
+  <br />
   <mat-checkbox class="example-margin"
     >Elektronik ileti almak istiyorum.</mat-checkbox
   >
   <button
+    (click)="save()"
     [disabled]="signupForm.invalid"
     class="signup-button"
     mat-raised-button

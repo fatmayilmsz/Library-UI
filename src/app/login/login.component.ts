@@ -8,22 +8,65 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 
 
-export class LoginComponent {
-  //Create FormGroup
-//   loginForm!: FormGroup;
-//   constructor(private fb: FormBuilder) {
-//      this.myForm();
-//   }
+export class LoginComponent implements OnInit{
+  constructor(private formBuilder: FormBuilder){}
+  private _loginEmail : string="";
+  private _loginPassword : string="";
+  private _signupName : string="";
+  private _signupLastname : string="";
+  private _signupEmail : string="";
+  private _signupPassword : string="";
+  private _signupPasswordAgain : string="";
+  isTrue:boolean=false;
 
-//   myForm() {
-//     this.loginForm = this.fb.group({
-//       email: ['', Validators.required ],
-//     });
-//  }
-//  ngOnInit()
-//  {
+  get loginEmail():string{
+    return this._loginEmail;
+  }
+  set loginEmail(val:string){
+    this._loginEmail=val;
+  }
 
-//  }
+  get loginPassword():string{
+    return this._loginPassword;
+  }
+  set loginPassword(val:string){
+    this._loginPassword=val;
+  }
+
+  get signupName():string{
+    return this._signupName;
+  }
+  set signupName(val:string){
+    this._signupName=val;
+  }
+
+  get signupLastname():string{
+    return this._signupLastname;
+  }
+  set signupLastname(val:string){
+    this._signupLastname=val;
+
+  }  
+  get signupEmail():string{
+    return this._signupEmail;
+  }
+  set signupEmail(val:string){
+    this._signupEmail=val;
+  }
+
+  get signupPassword():string{
+    return this._signupPassword;
+  }
+  set signupPassword(val:string){
+    this._signupPassword=val;
+  }
+  get signupPasswordAgain():string{
+    return this._signupPasswordAgain;
+  }
+  set signupPasswordAgain(val:string){
+    this._signupPasswordAgain=val;
+  }
+
 
 title_login = 'GİRİŞ YAP';
 loginForm = new FormGroup({
@@ -63,4 +106,18 @@ get spassword(){
 }
 get scontract(){
   return this.signupForm.get('scontract');
-}}
+}
+ngOnInit() { 
+}
+save(){
+  console.log(this.signupName,this.signupLastname,this.signupEmail,this.signupPassword,this.signupPasswordAgain)
+  if(this.signupPassword!=this.signupPasswordAgain){
+    this.isTrue=true;
+  }
+}
+if (signupPassword=!this.signupPasswordAgain) {
+  console.log(signupPassword)
+  console.log(this.signupPasswordAgain)
+
+}
+}
