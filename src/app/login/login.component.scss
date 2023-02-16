@@ -80,9 +80,6 @@
   outline: black;
   box-shadow: 2px 2px 5px gray;
 }
-.example-margin {
-  height: 25px;
-}
 .login-button {
   left: 40%;
 }
@@ -91,7 +88,24 @@
   right: 30%;
 }
 .example-margin {
-  margin-left: 10%;
+  margin-left: 3%;
+  height: 25px;
+}
+.forget-password {
+  text-decoration: none;
+  color: black;
+  margin-left: 50%;
+  position: absolute;
+  top: 61.5%;
+  display: inline;
+}
+.checkbox-login {
+  display: inline-block;
+  top: 59%;
+  position: absolute;
+}
+.checkbox-div {
+  float: bottom;
 }
 .title-login {
   text-align: center;
@@ -135,9 +149,8 @@
   position: absolute;
 }
 // KONTEYNIR*************************************************************
-.kontainer{
+.kontainer {
   position: absolute;
   left: 0;
   bottom: 2%;
-
 }
