@@ -23,6 +23,8 @@ import { CardsliderComponent } from './cardslider/cardslider.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { SliderComponent } from './slider/slider.component';
+import { BookauthorComponent } from './bookauthor/bookauthor.component';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { SliderComponent } from './slider/slider.component';
     CardsliderComponent,
     NextDirective,
     PrevDirective,
-    SliderComponent
+    SliderComponent,
+    BookauthorComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

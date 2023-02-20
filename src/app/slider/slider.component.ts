@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
-
 }

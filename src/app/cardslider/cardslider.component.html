@@ -34,33 +34,58 @@
     </div>
   </div>
 </section> -->
-
-<h1 class="card-list-name">Yeni Eklenenler</h1>
-<div class="container" #container>
-  <div
-    class="left"
-    *ngIf="totalPages > 1"
-    (click)="currentPage != 1 && changePage(-1)"
-    [ngClass]="{ disabled: currentPage === 1 }"
-  ></div>
-  <div class="cards" [ngClass]="{ 'w-100': totalPages === 1 }">
-    <div
-      class="overflow"
-      [ngStyle]="{ width: overflowWidth, left: pagePosition }"
+<div class="main-div">
+  <h1 class="card-list-name">Yeni Eklenenler</h1>
+  <div class="container" #container>
+    <mat-icon
+      class="left"
+      *ngIf="totalPages > 1"
+      (click)="currentPage != 1 && changePage(-1)"
+      [ngClass]="{ disabled: currentPage === 1 }"
+      >navigate_before</mat-icon
     >
+
+    <div class="cards" [ngClass]="{ 'w-100': totalPages === 1 }">
       <div
-        class="card"
-        *ngFor="let i of arr; let index = index"
-        [ngStyle]="{ width: cardWidth }"
+        class="overflow"
+        [ngStyle]="{ width: overflowWidth, left: pagePosition }"
       >
-        <span>{{ i }}</span>
+        <div
+          class="card"
+          *ngFor="let i of arr; let index = index"
+          [ngStyle]="{ width: cardWidth }"
+        >
+          <div class="book-content">
+            <img class="book-img" src="assets/images/card.png" />
+            <div class="book-text">
+              <h3 class="text-center">Milenaya Mektuplar</h3>
+              <h3 class="text-center">Kafka</h3>
+              <h3 class="text-center">Epsilon Yayınları</h3>
+              <h3 class="text-center">5.Basım</h3>
+              <h5 class="text-center">#Biyografi</h5>
+            </div>
+
+            <button class="talep" mat-raised-button>Talep Et</button>
+
+            <button
+              class="fav"
+              mat-icon-button
+              color="warn"
+              aria-label="Example icon button with a heart icon"
+            >
+              <mat-icon>favorite</mat-icon>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
+
+    <mat-icon
+      class="right"
+      *ngIf="totalPages > 1"
+      (click)="currentPage != totalPages && changePage(+1)"
+      [ngClass]="{ disabled: currentPage === totalPages }"
+      >navigate_next</mat-icon
+    >
   </div>
-  <div
-    class="right"
-    *ngIf="totalPages > 1"
-    (click)="currentPage != totalPages && changePage(+1)"
-    [ngClass]="{ disabled: currentPage === totalPages }"
-  ></div>
 </div>

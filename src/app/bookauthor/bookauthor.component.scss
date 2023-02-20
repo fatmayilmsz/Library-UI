@@ -1,0 +1,22 @@
+.author,
+.book {
+  width: 600px;
+  height: 150;
+  margin-top: 30;
+  margin-bottom: 100px;
+}
+.author {
+  right: 51%;
+  top: 460px;
+  position: absolute;
+}
+.book {
+  left: 51%;
+  top: 460px;
+  position: absolute;
+}
+.author-image,
+.book-image {
+  width: 600px;
+  height: 150;
+}

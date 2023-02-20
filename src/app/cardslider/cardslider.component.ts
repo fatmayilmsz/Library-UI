@@ -7,7 +7,8 @@ import { Component,HostListener, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./cardslider.component.scss']
 })
 export class CardsliderComponent {
-  arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  cardtatus:boolean=false;
+  arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   totalCards: number = this.arr.length;
   currentPage: number = 1;
   pagePosition: string = "0%";
