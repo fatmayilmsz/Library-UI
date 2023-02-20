@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
 
 export class LoginComponent implements OnInit{
-  constructor(private formBuilder: FormBuilder){}
+  datas:any=[];
+  constructor(private httpService:ServiceService){}
   private _loginEmail : string="";
   private _loginPassword : string="";
   private _signupName : string="";
@@ -73,7 +75,7 @@ loginForm = new FormGroup({
   lemail: new FormControl('',[Validators.required,Validators.email]),
   lpassword: new FormControl('',[Validators.required])
 })
-loginUser(){
+loginUsers(){
   console.warn(this.loginForm.value)
 }
 get lemail(){
@@ -120,4 +122,19 @@ if (signupPassword=!this.signupPasswordAgain) {
   console.log(this.signupPasswordAgain)
 
 }
+
+  createUser(){
+    let params={name:this.signupName,lastName:this.signupLastname,email:this.signupEmail,password:this.signupPassword,passwordAgain:this.signupPasswordAgain}
+     this.httpService.Post("https://localhost:7191/users",params).subscribe((resp)=>{
+    }, (err) => {
+      alert(err.message)
+    });
+  }
+  loginUser(){
+    let params={email:this.loginEmail,password:this.loginPassword}
+     this.httpService.Post("https://localhost:7191/users/login",params).subscribe((resp)=>{
+    }, (err) => {
+      alert(err.message)
+    });
+  }
 }

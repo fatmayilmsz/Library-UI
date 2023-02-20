@@ -11,12 +11,29 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HomePageComponent } from './home/home.page.component';
+import { RouterModule } from '@angular/router';
+
+// import { MatDividerModule } from '@angular/material/divider';
+// import { MatCardModule } from '@angular/material/card';
+// import { MatCarouselModule } from '@ngmodule/material-carousel';
+// import { FlexLayoutModule } from '@angular/flex-layout';
+import { CardsliderComponent } from './cardslider/cardslider.component';
+import { NextDirective } from './next.directive';
+import { PrevDirective } from './prev.directive';
+import { SliderComponent } from './slider/slider.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent,
+    CardsliderComponent,
+    NextDirective,
+    PrevDirective,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +46,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatIconModule,
     MaterialExampleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterModule,
+    // MatDividerModule,
+    // MatCardModule,
+    // MatCarouselModule.forRoot(),
+    // FlexLayoutModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

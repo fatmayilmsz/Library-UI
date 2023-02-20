@@ -1,0 +1,116 @@
+// .product {
+//   padding: 20px 0;
+// }
+// .slider-wrap {
+//   position: relative;
+//   overflow: hidden;
+//   height: 450px;
+// }
+// .slider-main {
+//   position: absolute;
+//   width: 200%;
+//   left: 10%;
+// }
+// .item {
+//   display: inline-block;
+//   width: 170px; //aradaki uzaklık
+//   height: 400px;
+//   background-color: gray;
+//   font-size: 18px;
+//   position: relative;
+//   margin: 0 12px;
+// }
+// .text {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
+// .prev {
+//   position: absolute;
+//   left: 9%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+// }
+// .next {
+//   position: absolute;
+//   right: 9%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+// }
+// .img-responsive {
+//   width: 150px; //aradaki uzaklık
+//   height: 230px;
+//   position: relative;
+//   top: 0;
+// }
+
+.w-100 {
+  width: 100% !important;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.cards {
+  width: calc(100% - 80px);
+  overflow: hidden;
+}
+
+.overflow {
+  position: relative;
+  transition: left 0.5s ease-in-out;
+}
+
+.card {
+  height: 300px;
+  background-color: #e0e1e2;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+
+.no-right-margin {
+  margin-right: 0px;
+}
+
+.card span {
+  font-size: 48px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.left,
+.right {
+  height: 30px;
+  width: 30px;
+  background-color: #0072bc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left.disabled,
+.right.disabled {
+  background-color: #ccc;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+.card-list-name {
+  margin-left: 2%;
+}
+h1 {
+  font: 394 35px/53px Roboto, sans-serif;
+}

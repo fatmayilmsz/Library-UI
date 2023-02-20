@@ -1,0 +1,35 @@
+//---------------------------------------------------- NAVBAR ----------------------------------------------------
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0px;
+  width: 500px;
+}
+.search-input {
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 100px;
+}
+.add-book-icon {
+  margin-right: 10%;
+}
+.all-books-icon {
+  margin-right: 10%;
+}
+.account-icon {
+  margin-right: 20%;
+}
+.nav-item {
+  font-size: 15px;
+  position: absolute;
+  margin-top: 5px;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.example-icon {
+  margin-left: 10%;
+}
