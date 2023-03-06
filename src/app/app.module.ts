@@ -32,6 +32,9 @@ import { AllbookComponent } from './allbook/allbook.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AdminComponent } from './admin/admin.component';
 import { ApprovalBookComponent } from './approval-book/approval-book.component';
+import { SliderPictureComponent } from './slider-picture/slider-picture.component';
+import { FeaturedBooksComponent } from './featured-books/featured-books.component';
+import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
 
 
 @NgModule({
@@ -51,7 +54,10 @@ import { ApprovalBookComponent } from './approval-book/approval-book.component';
     AllbookComponent,
     NavbarComponent,
     AdminComponent,
-    ApprovalBookComponent
+    ApprovalBookComponent,
+    SliderPictureComponent,
+    FeaturedBooksComponent,
+    BookAuthorPictureComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +73,7 @@ import { ApprovalBookComponent } from './approval-book/approval-book.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+
     // MatDividerModule,
     // MatCardModule,
     // MatCarouselModule.forRoot(),
