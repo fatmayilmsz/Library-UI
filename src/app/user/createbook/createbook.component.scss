@@ -1,0 +1,71 @@
+.main {
+  border: 1px solid black;
+  height: 115%;
+  width: 41%;
+  top: 70;
+  left: 30%;
+  position: absolute;
+  right: 20%;
+  border-bottom: none;
+  border-top: none;
+}
+.detailbook-image {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-bottom: 60px;
+}
+.input {
+  border: 1px solid gray;
+  padding: 10px;
+  margin-left: 5%;
+  border-radius: 5px;
+}
+.input {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid gray;
+  padding: 11px;
+  margin-bottom: 5px;
+}
+.input:focus {
+  outline: black;
+  box-shadow: 2px 2px 5px gray;
+}
+.book-name {
+  position: absolute;
+  top: 30px;
+  width: 64%;
+  height: 30px;
+}
+.book-author {
+  position: absolute;
+  top: 70px;
+  width: 64%;
+  height: 30px;
+}
+.book-publishing {
+  position: absolute;
+  top: 110px;
+  width: 64%;
+  height: 30px;
+}
+.book-summary {
+  width: 64%;
+  height: 100px;
+  position: absolute;
+  top: 150px;
+}
+.submit-button {
+  position: absolute;
+  top: 260px;
+  left: 74%;
+}
+.for-create-book {
+  position: absolute;
+  top: -160;
+  left: 2%;
+}
+.category-component{
+    position: absolute;
+    top: 530;
+    left: 40;
+}

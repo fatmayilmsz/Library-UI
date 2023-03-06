@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ServiceService } from '../service.service';
 
 export class LoginComponent implements OnInit{
   datas:any=[];
-  constructor(private httpService:ServiceService){}
+  constructor(private httpService:ServiceService,private router: Router){}
   private _loginEmail : string="";
   private _loginPassword : string="";
   private _signupName : string="";
@@ -111,10 +112,15 @@ get scontract(){
 }
 ngOnInit() { 
 }
-save(){
+checkPassword(){
   console.log(this.signupName,this.signupLastname,this.signupEmail,this.signupPassword,this.signupPasswordAgain)
   if(this.signupPassword!=this.signupPasswordAgain){
     this.isTrue=true;
+  }
+  else{
+    const navigationDetails: string[] = ['/home'];
+    this.router.navigate(navigationDetails)
+
   }
 }
 if (signupPassword=!this.signupPasswordAgain) {
@@ -122,18 +128,23 @@ if (signupPassword=!this.signupPasswordAgain) {
   console.log(this.signupPasswordAgain)
 
 }
-
+  registerButton(){
+    this.createUser()
+    this.checkPassword()
+  }
   createUser(){
     let params={name:this.signupName,lastName:this.signupLastname,email:this.signupEmail,password:this.signupPassword,passwordAgain:this.signupPasswordAgain}
-     this.httpService.Post("https://localhost:7191/users",params).subscribe((resp)=>{
-    }, (err) => {
+     this.httpService.Post("https://localhost:7191/register",params).subscribe((resp)=>{
+     }, (err) => {
       alert(err.message)
     });
   }
   loginUser(){
     let params={email:this.loginEmail,password:this.loginPassword}
-     this.httpService.Post("https://localhost:7191/users/login",params).subscribe((resp)=>{
-    }, (err) => {
+     this.httpService.Post("https://localhost:7191/login",params).subscribe((resp)=>{      
+      const navigationDetails: string[] = ['/home'];
+      this.router.navigate(navigationDetails)
+}, (err) => {
       alert(err.message)
     });
   }

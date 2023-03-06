@@ -23,8 +23,15 @@ import { CardsliderComponent } from './cardslider/cardslider.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
 import { SliderComponent } from './slider/slider.component';
-import { BookauthorComponent } from './bookauthor/bookauthor.component';
+import { BookauthorComponent } from './authorofthemonth/bookauthor.component';
 import { CategoryComponent } from './category/category.component';
+import { CreatebookComponent } from './user/createbook/createbook.component';
+import { DetailbookComponent } from './detailbook/detailbook.component';
+import { BookofthemonthComponent } from './bookofthemonth/bookofthemonth.component';
+import { AllbookComponent } from './allbook/allbook.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AdminComponent } from './admin/admin.component';
+import { ApprovalBookComponent } from './approval-book/approval-book.component';
 
 
 @NgModule({
@@ -37,7 +44,14 @@ import { CategoryComponent } from './category/category.component';
     PrevDirective,
     SliderComponent,
     BookauthorComponent,
-    CategoryComponent
+    CategoryComponent,
+    CreatebookComponent,
+    DetailbookComponent,
+    BookofthemonthComponent,
+    AllbookComponent,
+    NavbarComponent,
+    AdminComponent,
+    ApprovalBookComponent
   ],
   imports: [
     BrowserModule,

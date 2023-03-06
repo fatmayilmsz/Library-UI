@@ -1,0 +1,36 @@
+
+<div class="main">
+    <img class="detailbook-image" src="assets/images/card.png" />
+    <input
+      class="input book-name"
+      formControlName="bookname"
+      type="text"
+      placeholder="Kitap Adı"
+    />
+    <input
+      class="input book-author"
+      formControlName="bookauthor"
+      type="text"
+      placeholder="Kitap Yazarı"
+    />
+    <input
+      class="input book-publishing"
+      formControlName="bookpublishing"
+      type="text"
+      placeholder="Yayın Evi"
+    />
+    <input
+      class="input book-summary"
+      formControlName="booksummary"
+      type="text"
+      placeholder="Kitap Özeti"
+    />
+    <button class="submit-button" type="submit" mat-raised-button>
+      Onaya Gönder
+    </button>
+  
+    <hr class="hr" />
+    <app-bookofthemonth class="for-create-book"></app-bookofthemonth>
+  </div>
+  <app-category class="category-component"></app-category>
+  
