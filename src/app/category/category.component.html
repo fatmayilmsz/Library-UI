@@ -1,4 +1,7 @@
 <div class="main">
   <h1>KATEGORİLER</h1>
-  <a *ngFor="let category in categories" class="category-name" routerLink="">{{category}}</a><br />
+  <a *ngFor="let category of categories" class="category-name" routerLink="">{{
+    category.name
+  }}</a
+  ><br />
 </div>

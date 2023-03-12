@@ -10,6 +10,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ApprovalBookComponent } from './approval-book/approval-book.component';
 import { SliderPictureComponent } from './slider-picture/slider-picture.component';
 import { FeaturedBooksComponent } from './featured-books/featured-books.component';
+import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
+import { CreateAuthorComponent } from './create-author/create-author.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -20,7 +22,8 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent },
   {path: 'approval-book', component: ApprovalBookComponent },
   {path: 'slider-picture', component: SliderPictureComponent },
-  {path: 'featured-books', component: FeaturedBooksComponent },
+  {path: 'book-author', component: BookAuthorPictureComponent },
+  {path: 'add-author', component: CreateAuthorComponent },
 
 
 

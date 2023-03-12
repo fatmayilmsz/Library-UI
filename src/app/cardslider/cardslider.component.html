@@ -53,17 +53,16 @@
         <div
           class="card"
           [routerLink]="['/book-detail']"
-          *ngFor="let i of arr; let index = index"
+          *ngFor="let data of datas"
           [ngStyle]="{ width: cardWidth }"
         >
           <div class="book-content">
             <img class="book-img" src="assets/images/card.png" />
             <div class="book-text">
-              <h3 class="text-center">Milenaya Mektuplar</h3>
-              <h3 class="text-center">Kafka</h3>
-              <h3 class="text-center">Epsilon Yayınları</h3>
-              <h3 class="text-center">5.Basım</h3>
-              <h5 class="text-center">#Biyografi</h5>
+              <h3 class="text-center">{{ data.name }}</h3>
+              <h3 class="text-center">{{ data.author }}</h3>
+              <h3 class="text-center">{{ data.publishing }}</h3>
+              <h5 class="text-center">{{ data.category }}</h5>
             </div>
 
             <button class="talep" mat-raised-button>Talep Et</button>

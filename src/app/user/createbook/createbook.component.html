@@ -1,36 +1,111 @@
-
 <div class="main">
+  <div [formGroup]="createBookForm">
     <img class="detailbook-image" src="assets/images/card.png" />
     <input
       class="input book-name"
-      formControlName="bookname"
+      formControlName="form_name"
+      [(ngModel)]="name"
       type="text"
       placeholder="Kitap Adı"
     />
+    <span
+      style="
+        color: red;
+        margin-left: 5%;
+        margin-top: 5px;
+        position: absolute;
+        font-size: 12px;
+      "
+      *ngIf="form_name && form_name.invalid && form_name.touched"
+      >*Lütfen tüm alanları doldurun.</span
+    >
+
     <input
       class="input book-author"
-      formControlName="bookauthor"
+      formControlName="form_author"
+      [(ngModel)]="author"
       type="text"
       placeholder="Kitap Yazarı"
     />
+    <span
+      style="
+        color: red;
+        margin-left: 5%;
+        margin-top: 5px;
+        position: absolute;
+        font-size: 12px;
+      "
+      *ngIf="form_author && form_author.invalid && form_author.touched"
+      >*Lütfen tüm alanları doldurun.</span
+    >
     <input
       class="input book-publishing"
-      formControlName="bookpublishing"
+      formControlName="form_publishing"
+      [(ngModel)]="publishing"
       type="text"
       placeholder="Yayın Evi"
     />
+    <span
+      style="
+        color: red;
+        margin-left: 5%;
+        margin-top: 5px;
+        position: absolute;
+        font-size: 12px;
+      "
+      *ngIf="
+        form_publishing && form_publishing.invalid && form_publishing.touched
+      "
+      >*Lütfen tüm alanları doldurun.</span
+    >
+    <input
+      class="input book-category"
+      formControlName="form_category"
+      [(ngModel)]="category"
+      type="text"
+      placeholder="Kategori"
+    />
+    <span
+      style="
+        color: red;
+        margin-left: 5%;
+        margin-top: 5px;
+        position: absolute;
+        font-size: 12px;
+      "
+      *ngIf="form_category && form_category.invalid && form_category.touched"
+      >*Lütfen tüm alanları doldurun.</span
+    >
     <input
       class="input book-summary"
-      formControlName="booksummary"
+      formControlName="form_summary"
+      [(ngModel)]="summary"
       type="text"
       placeholder="Kitap Özeti"
     />
-    <button class="submit-button" type="submit" mat-raised-button>
+    <span
+      style="
+        color: red;
+        margin-left: 5%;
+        margin-top: 5px;
+        position: absolute;
+        font-size: 12px;
+      "
+      *ngIf="form_summary && form_summary.invalid && form_summary.touched"
+      >*Lütfen tüm alanları doldurun.</span
+    >
+    <button
+      (click)="createBook()"
+      [disabled]="createBookForm.invalid"
+      class="submit-button"
+      type="submit"
+      mat-raised-button
+    >
       Onaya Gönder
     </button>
-  
-    <hr class="hr" />
-    <app-bookofthemonth class="for-create-book"></app-bookofthemonth>
   </div>
-  <app-category class="category-component"></app-category>
-  
+
+  <hr class="hr" />
+  <app-bookofthemonth class="for-create-book"></app-bookofthemonth>
+</div>
+<app-category class="category-component"></app-category>

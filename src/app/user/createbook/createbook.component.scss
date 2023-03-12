@@ -52,20 +52,29 @@
   width: 64%;
   height: 100px;
   position: absolute;
-  top: 150px;
+  top: 190px;
 }
 .submit-button {
   position: absolute;
-  top: 260px;
+  top: 300px;
   left: 74%;
 }
 .for-create-book {
   position: absolute;
-  top: -160;
+  top: -130;
   left: 2%;
 }
-.category-component{
-    position: absolute;
-    top: 530;
-    left: 40;
+.category-component {
+  position: absolute;
+  top: 550;
+  left: 40;
+}
+.book-category {
+  width: 64%;
+  position: absolute;
+  height: 30px;
+  top: 150px;
+}
+.hr {
+  margin-top: 50px;
 }

@@ -1,4 +1,5 @@
-import { Component,HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component,HostListener, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 
 @Component({
@@ -6,7 +7,46 @@ import { Component,HostListener, ViewChild, ElementRef } from '@angular/core';
   templateUrl: './cardslider.component.html',
   styleUrls: ['./cardslider.component.scss']
 })
-export class CardsliderComponent {
+export class CardsliderComponent implements OnInit{
+  constructor(private httpService:ServiceService){}
+  datas:any=[];
+
+  private _name : string="";
+  private _author : string="";
+
+  private _publishing : string="";
+  private _category : string="";
+
+
+
+  get name():string{
+    return this._name;
+  }
+  set name(val:string){
+    this._name=val;
+  }
+
+  get publishing():string{
+    return this._publishing;
+  }
+  set publishing(val:string){
+    this._publishing=val;
+  } 
+   
+  get author():string{
+    return this._author;
+  }
+  set author(val:string){
+    this._author=val;
+  }
+    
+  get category():string{
+    return this._category;
+  }
+  set category(val:string){
+    this._category=val;
+  }
+
   cardtatus:boolean=false;
   arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   totalCards: number = this.arr.length;
@@ -34,8 +74,11 @@ export class CardsliderComponent {
   ngOnInit() {
     this.cardsPerPage = this.getCardsPerPage();
     this.initializeSlider();
+    this.getBooks();
   }
-
+  getBooks(){
+    this.httpService.Get("https://localhost:7191/books","").subscribe((resp)=>{this.datas=resp})
+  }
   initializeSlider() {
     this.totalPages = Math.ceil(this.totalCards / this.cardsPerPage);
     this.overflowWidth = `calc(${this.totalPages * 100}% + ${this.totalPages *

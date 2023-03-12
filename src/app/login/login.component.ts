@@ -120,17 +120,15 @@ checkPassword(){
   else{
     const navigationDetails: string[] = ['/home'];
     this.router.navigate(navigationDetails)
-
   }
 }
 if (signupPassword=!this.signupPasswordAgain) {
   console.log(signupPassword)
   console.log(this.signupPasswordAgain)
-
 }
   registerButton(){
-    this.createUser()
     this.checkPassword()
+    this.createUser()
   }
   createUser(){
     let params={name:this.signupName,lastName:this.signupLastname,email:this.signupEmail,password:this.signupPassword,passwordAgain:this.signupPasswordAgain}
@@ -141,11 +139,12 @@ if (signupPassword=!this.signupPasswordAgain) {
   }
   loginUser(){
     let params={email:this.loginEmail,password:this.loginPassword}
-     this.httpService.Post("https://localhost:7191/login",params).subscribe((resp)=>{      
+     this.httpService.Post("https://localhost:7191/login",params).subscribe((resp:any)=>{      
+      sessionStorage.setItem('jwt',resp.token)
       const navigationDetails: string[] = ['/home'];
       this.router.navigate(navigationDetails)
-}, (err) => {
-      alert(err.message)
-    });
+      console.log(resp)
+});
+  // console.log(this.token)
   }
 }

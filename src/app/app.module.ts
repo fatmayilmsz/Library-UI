@@ -14,11 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './home/home.page.component';
 import { RouterModule } from '@angular/router';
-
-// import { MatDividerModule } from '@angular/material/divider';
-// import { MatCardModule } from '@angular/material/card';
-// import { MatCarouselModule } from '@ngmodule/material-carousel';
-// import { FlexLayoutModule } from '@angular/flex-layout';
 import { CardsliderComponent } from './cardslider/cardslider.component';
 import { NextDirective } from './next.directive';
 import { PrevDirective } from './prev.directive';
@@ -35,6 +30,8 @@ import { ApprovalBookComponent } from './approval-book/approval-book.component';
 import { SliderPictureComponent } from './slider-picture/slider-picture.component';
 import { FeaturedBooksComponent } from './featured-books/featured-books.component';
 import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreateAuthorComponent } from './create-author/create-author.component';
 
 
 @NgModule({
@@ -58,6 +55,7 @@ import { BookAuthorPictureComponent } from './book-author-picture/book-author-pi
     SliderPictureComponent,
     FeaturedBooksComponent,
     BookAuthorPictureComponent,
+    CreateAuthorComponent,
   ],
   imports: [
     BrowserModule,
@@ -73,11 +71,7 @@ import { BookAuthorPictureComponent } from './book-author-picture/book-author-pi
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-
-    // MatDividerModule,
-    // MatCardModule,
-    // MatCarouselModule.forRoot(),
-    // FlexLayoutModule,
+    NgbModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
