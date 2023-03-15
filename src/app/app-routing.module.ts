@@ -13,13 +13,15 @@ import { FeaturedBooksComponent } from './featured-books/featured-books.componen
 import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
 import { CreateAuthorComponent } from './create-author/create-author.component';
 
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: HomePageComponent },
   {path: 'book-detail', component: DetailbookComponent },
   {path: 'add-book', component: CreatebookComponent },
   {path: 'all-book', component: AllbookComponent },
-  {path: 'admin', component: AdminComponent },
+  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   {path: 'approval-book', component: ApprovalBookComponent },
   {path: 'slider-picture', component: SliderPictureComponent },
   {path: 'book-author', component: BookAuthorPictureComponent },

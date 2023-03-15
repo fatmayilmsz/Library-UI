@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ServiceService } from '../service.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ import { ServiceService } from '../service.service';
 
 export class LoginComponent implements OnInit{
   datas:any=[];
-  constructor(private httpService:ServiceService,private router: Router){}
+  constructor(private httpService:ServiceService,private router: Router, private authService: AuthService){}
   private _loginEmail : string="";
   private _loginPassword : string="";
   private _signupName : string="";
@@ -138,13 +139,12 @@ if (signupPassword=!this.signupPasswordAgain) {
     });
   }
   loginUser(){
-    let params={email:this.loginEmail,password:this.loginPassword}
-     this.httpService.Post("https://localhost:7191/login",params).subscribe((resp:any)=>{      
-      sessionStorage.setItem('jwt',resp.token)
-      const navigationDetails: string[] = ['/home'];
-      this.router.navigate(navigationDetails)
-      console.log(resp)
-});
-  // console.log(this.token)
+    this.authService.login( this.loginEmail,this.loginPassword);
+//     let params={email:this.loginEmail,password:this.loginPassword}
+//      this.httpService.Post("https://localhost:7191/login",params).subscribe((resp:any)=>{      
+//       sessionStorage.setItem('jwt',resp.token)
+     
+//       console.log(resp)
+// });
   }
 }
