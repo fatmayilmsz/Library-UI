@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { ServiceService } from '../service.service';
 
 @Injectable({
@@ -17,7 +16,8 @@ export class AuthService {
       localStorage.setItem('userCredential',resp.token) 
       this.isUserLoggedIn=true;
       localStorage.setItem('isUserLoggedIn','true');       
-      this.router.navigate(['/admin']); 
+      this.router.navigate(['/home']); 
+      
     }, (err) => {
       this.isUserLoggedIn=false;
       alert(err)

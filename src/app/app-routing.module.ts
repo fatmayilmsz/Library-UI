@@ -12,16 +12,15 @@ import { SliderPictureComponent } from './slider-picture/slider-picture.componen
 import { FeaturedBooksComponent } from './featured-books/featured-books.component';
 import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
 import { CreateAuthorComponent } from './create-author/create-author.component';
-
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: HomePageComponent },
   {path: 'book-detail', component: DetailbookComponent },
-  {path: 'add-book', component: CreatebookComponent },
+  {path: 'add-book', component: CreatebookComponent, canActivate: [AuthGuard]},
   {path: 'all-book', component: AllbookComponent },
-  {path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
+  {path: 'admin', component: AdminComponent},
   {path: 'approval-book', component: ApprovalBookComponent },
   {path: 'slider-picture', component: SliderPictureComponent },
   {path: 'book-author', component: BookAuthorPictureComponent },

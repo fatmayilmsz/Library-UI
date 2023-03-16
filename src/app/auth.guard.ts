@@ -23,11 +23,11 @@ export class AuthGuard implements CanActivate {
 
         if(this.val != null && this.val == "true"){
            if(url == "/login")
-              this.router.parseUrl('/admin');
+              this.router.parseUrl('/add-book');
            else 
               return true;
         } else {
-           return this.router.parseUrl('/home');
+           return this.router.parseUrl('/login');
         }
         return true;
      }

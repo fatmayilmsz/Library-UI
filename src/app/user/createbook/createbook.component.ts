@@ -8,12 +8,14 @@ import { ServiceService } from 'src/app/service.service';
   styleUrls: ['./createbook.component.scss']
 })
 export class CreatebookComponent implements OnInit{
+
   constructor(private httpService:ServiceService){}
   name:String="";
   author:String="";
   publishing:String="";
   category:String="";
   summary:String="";
+
   get form_name(){
     return this.createBookForm.get('form_name');
   }
