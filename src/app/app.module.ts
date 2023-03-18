@@ -32,6 +32,7 @@ import { FeaturedBooksComponent } from './featured-books/featured-books.componen
 import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateAuthorComponent } from './create-author/create-author.component';
+import { NotFoundComponent } from './not.found/not.found.component';
 
 
 @NgModule({
@@ -56,6 +57,7 @@ import { CreateAuthorComponent } from './create-author/create-author.component';
     FeaturedBooksComponent,
     BookAuthorPictureComponent,
     CreateAuthorComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ import { FeaturedBooksComponent } from './featured-books/featured-books.componen
 import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
 import { CreateAuthorComponent } from './create-author/create-author.component';
 import { AuthGuard } from './auth.guard';
+import { NotFoundComponent } from './not.found/not.found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'slider-picture', component: SliderPictureComponent },
   {path: 'book-author', component: BookAuthorPictureComponent },
   {path: 'add-author', component: CreateAuthorComponent },
+  {path: 'forbidden', component: NotFoundComponent },
 
 
 
