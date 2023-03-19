@@ -14,6 +14,7 @@ import { BookAuthorPictureComponent } from './book-author-picture/book-author-pi
 import { CreateAuthorComponent } from './create-author/create-author.component';
 import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './not.found/not.found.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

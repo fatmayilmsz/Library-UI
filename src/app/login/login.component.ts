@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit{
   private _signupPassword : string="";
   private _signupPasswordAgain : string="";
   isTrue:boolean=false;
-
+  
   get loginEmail():string{
     return this._loginEmail;
   }
@@ -71,11 +71,11 @@ export class LoginComponent implements OnInit{
     this._signupPasswordAgain=val;
   }
 
-
 title_login = 'GİRİŞ YAP';
 loginForm = new FormGroup({
   lemail: new FormControl('',[Validators.required,Validators.email]),
-  lpassword: new FormControl('',[Validators.required])
+  lpassword: new FormControl('',[Validators.required]),
+  rememberMe: new FormControl(false),
 })
 loginUsers(){
   console.warn(this.loginForm.value)
@@ -85,6 +85,9 @@ get lemail(){
 }
 get lpassword(){
   return this.loginForm.get('lpassword');
+}
+get rememberMe(){
+  return this.loginForm.get('rememberMe');
 }
 title_signup = 'KAYIT OL';
 signupForm = new FormGroup({
@@ -113,6 +116,10 @@ get scontract(){
 }
 ngOnInit() { 
 }
+rememberMeValue:any;
+checkedrememberme(){
+ this.rememberMeValue = this.rememberMe?.value
+}
 checkPassword(){
   console.log(this.signupName,this.signupLastname,this.signupEmail,this.signupPassword,this.signupPasswordAgain)
   if(this.signupPassword!=this.signupPasswordAgain){
@@ -139,7 +146,7 @@ if (signupPassword=!this.signupPasswordAgain) {
     });
   }
   loginUser(){
-    this.authService.login( this.loginEmail,this.loginPassword);
+    this.authService.login( this.loginEmail,this.loginPassword,this.rememberMeValue);
 //     let params={email:this.loginEmail,password:this.loginPassword}
 //      this.httpService.Post("https://localhost:7191/login",params).subscribe((resp:any)=>{      
 //       sessionStorage.setItem('jwt',resp.token)

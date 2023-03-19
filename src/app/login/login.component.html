@@ -35,7 +35,11 @@
     >*Lütfen şifre giriniz.</span
   >
   <div class="checkbox-div">
-    <mat-checkbox class="example-margin checkbox-login"
+    <mat-checkbox
+      type="checkbox"
+      formControlName="rememberMe"
+      (click)="checkedrememberme()"
+      class="example-margin checkbox-login"
       >Beni Hatırla</mat-checkbox
     >
     <a class="forget-password" routerLink="/home" routerLinkActive="active"
