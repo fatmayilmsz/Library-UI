@@ -121,14 +121,10 @@ checkedrememberme(){
  this.rememberMeValue = this.rememberMe?.value
 }
 checkPassword(){
-  console.log(this.signupName,this.signupLastname,this.signupEmail,this.signupPassword,this.signupPasswordAgain)
   if(this.signupPassword!=this.signupPasswordAgain){
     this.isTrue=true;
   }
-  else{
-    const navigationDetails: string[] = ['/home'];
-    this.router.navigate(navigationDetails)
-  }
+
 }
 if (signupPassword=!this.signupPasswordAgain) {
   console.log(signupPassword)
@@ -139,11 +135,16 @@ if (signupPassword=!this.signupPasswordAgain) {
     this.createUser()
   }
   createUser(){
-    let params={name:this.signupName,lastName:this.signupLastname,email:this.signupEmail,password:this.signupPassword,passwordAgain:this.signupPasswordAgain}
-     this.httpService.Post("https://localhost:7191/register",params).subscribe((resp)=>{
-     }, (err) => {
-      alert(err.message)
-    });
+      this.authService.register(this.signupName,this.signupLastname,this.signupEmail,this.signupPassword,this.signupPasswordAgain);
+      // let params={name:this.signupName,lastName:this.signupLastname,email:this.signupEmail,password:this.signupPassword,passwordAgain:this.signupPasswordAgain}
+      //  this.httpService.Post("https://localhost:7191/register",params).subscribe((resp:any)=>{
+      //  console.log("Kaydolan kişi bilgileri")
+      //  console.log(resp)
+      //  console.log(params.email)
+
+      //  }, (err) => {
+      //   alert(err.message)
+      // });
   }
   loginUser(){
     this.authService.login( this.loginEmail,this.loginPassword,this.rememberMeValue);

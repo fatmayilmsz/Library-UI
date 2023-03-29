@@ -6,10 +6,13 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  fullName:String=this.authService.getFullName()
 
   constructor(private authService: AuthService) {}
   ngOnInit() {
+  }
+
+  getFullName():any{
+    return localStorage.getItem("ns");
   }
 
   isUserLoggedIn():boolean{

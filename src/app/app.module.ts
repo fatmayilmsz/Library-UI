@@ -33,6 +33,9 @@ import { BookAuthorPictureComponent } from './book-author-picture/book-author-pi
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateAuthorComponent } from './create-author/create-author.component';
 import { NotFoundComponent } from './not.found/not.found.component';
+import { AccountComponent } from './account/account.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -58,8 +61,10 @@ import { NotFoundComponent } from './not.found/not.found.component';
     BookAuthorPictureComponent,
     CreateAuthorComponent,
     NotFoundComponent,
+    AccountComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -73,7 +78,7 @@ import { NotFoundComponent } from './not.found/not.found.component';
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
-    NgbModule
+    NgbModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

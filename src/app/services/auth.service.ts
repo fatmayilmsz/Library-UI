@@ -16,6 +16,7 @@ export class AuthService {
     let params={email,password}
     this.httpService.Post("https://localhost:7191/login",params).subscribe((resp:any)=>{
       this.loginUser=resp;
+      localStorage.setItem('ns',resp.name+ " " +resp.lastName)
       if(rememberMe){
         localStorage.setItem('userCredential',resp.token) 
       }else{
@@ -23,11 +24,25 @@ export class AuthService {
       }
       this.isUserLoggedIn=true;
       localStorage.setItem('isUserLoggedIn','true');       
+
       this.router.navigate(['/home']); 
     }, (err) => {
       this.isUserLoggedIn=false;
-      alert(err)
+      alert("Email veya parola hatalı.")
     })    
+   }
+   register(signupName:string,signupLastname:string,signupEmail:string,signupPassword:string,signupPasswordAgain:string){
+    let params={name:signupName,lastName:signupLastname,email:signupEmail,password:signupPassword,passwordAgain:signupPasswordAgain}
+    this.httpService.Post("https://localhost:7191/register",params).subscribe((resp:any)=>{
+      localStorage.setItem('ns',resp.name+ " " +resp.lastName)
+      sessionStorage.setItem('userCredential',resp.token) 
+      this.isUserLoggedIn=true;
+      localStorage.setItem('isUserLoggedIn','true');       
+      this.router.navigate(['/home']); 
+    }, (err) => {
+     alert(err.message)
+   });
+
    }
    getFullName(){
     this.fullName = this.loginUser.name + " " + this.loginUser.lastName
@@ -36,8 +51,10 @@ export class AuthService {
    logout(): void {
       localStorage.removeItem('isUserLoggedIn'); 
       localStorage.removeItem('userCredential')
+      localStorage.removeItem('ns')
+      sessionStorage.removeItem('userCredential')
       this.isUserLoggedIn = false;
-      this.router.navigate(['/login']); 
+      this.router.navigate(['/home']); 
    }
 
 }

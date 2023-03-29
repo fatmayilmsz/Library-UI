@@ -16,44 +16,26 @@
         placeholder="Kitap, yazar adı arayın"
       />
     </div>
-    <span class="example-spacer"></span>
-    <button
-      mat-icon-button
-      class="add-book-icon favorite-icon"
-      aria-label="Example icon-button with heart icon"
+
+    <a class="book" [routerLink]="['/add-book']">Kitap Ekle</a>
+    <a class="book" [routerLink]="['/all-book']">Tüm Kitaplar</a>
+    <a routerLink="/login" *ngIf="isUserLoggedIn() == false" class="book log">
+      Giriş Yap/Kayıt Ol</a
     >
-      <span [routerLink]="['/add-book']" class="nav-item">Kitap Ekle</span>
-    </button>
+
     <button
-      mat-icon-button
-      class="all-books-icon favorite-icon"
-      aria-label="Example  with heart icon"
-    >
-      <span [routerLink]="['/all-book']" class="nav-item">Tüm Kitaplar</span>
-    </button>
-    <button
-      *ngIf="isUserLoggedIn() == false"
-      mat-icon-button
       class="account-icon"
-      aria-label="Example icon-button with share icon"
-    >
-      <span routerLink="/login" class="nav-item">Giriş Yap/Kayıt Ol</span>
-    </button>
-    <button
       *ngIf="isUserLoggedIn()"
-      mat-icon-button
-      class="account-icon"
-      aria-label="Example icon-button with share icon"
+      mat-button
+      [matMenuTriggerFor]="menu"
     >
-      <span (click)="logOut()" class="nav-item">Çıkış Yap</span>
+      {{ getFullName() }}
     </button>
-    <button
-      *ngIf="isUserLoggedIn()"
-      mat-icon-button
-      class="account-icon"
-      aria-label="Example icon-button with share icon"
-    >
-      <span class="nav-item">{{ fullName }}</span>
-    </button>
+    <mat-menu #menu="matMenu">
+      <button [routerLink]="['/account']" mat-menu-item>Hesabım</button>
+      <button mat-menu-item>Favoriler</button>
+      <button mat-menu-item>Okuduğum Kitaplar</button>
+      <button (click)="logOut()" mat-menu-item>Çıkış Yap</button>
+    </mat-menu>
   </mat-toolbar>
 </p>

@@ -15,6 +15,7 @@ import { CreateAuthorComponent } from './create-author/create-author.component';
 import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './not.found/not.found.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AccountComponent } from './account/account.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   {path: 'book-author', component: BookAuthorPictureComponent },
   {path: 'add-author', component: CreateAuthorComponent },
   {path: 'forbidden', component: NotFoundComponent },
+  {path: 'account', component: AccountComponent },
 
 
 
