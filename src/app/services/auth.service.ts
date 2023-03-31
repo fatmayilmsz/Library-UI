@@ -29,7 +29,7 @@ export class AuthService {
     }, (err) => {
       this.isUserLoggedIn=false;
       alert("Email veya parola hatalı.")
-    })    
+    })
    }
    register(signupName:string,signupLastname:string,signupEmail:string,signupPassword:string,signupPasswordAgain:string){
     let params={name:signupName,lastName:signupLastname,email:signupEmail,password:signupPassword,passwordAgain:signupPasswordAgain}
@@ -42,7 +42,6 @@ export class AuthService {
     }, (err) => {
      alert(err.message)
    });
-
    }
    getFullName(){
     this.fullName = this.loginUser.name + " " + this.loginUser.lastName

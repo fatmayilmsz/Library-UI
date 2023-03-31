@@ -136,23 +136,8 @@ if (signupPassword=!this.signupPasswordAgain) {
   }
   createUser(){
       this.authService.register(this.signupName,this.signupLastname,this.signupEmail,this.signupPassword,this.signupPasswordAgain);
-      // let params={name:this.signupName,lastName:this.signupLastname,email:this.signupEmail,password:this.signupPassword,passwordAgain:this.signupPasswordAgain}
-      //  this.httpService.Post("https://localhost:7191/register",params).subscribe((resp:any)=>{
-      //  console.log("Kaydolan kişi bilgileri")
-      //  console.log(resp)
-      //  console.log(params.email)
-
-      //  }, (err) => {
-      //   alert(err.message)
-      // });
   }
   loginUser(){
     this.authService.login( this.loginEmail,this.loginPassword,this.rememberMeValue);
-//     let params={email:this.loginEmail,password:this.loginPassword}
-//      this.httpService.Post("https://localhost:7191/login",params).subscribe((resp:any)=>{      
-//       sessionStorage.setItem('jwt',resp.token)
-     
-//       console.log(resp)
-// });
   }
 }
