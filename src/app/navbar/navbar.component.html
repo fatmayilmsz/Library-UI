@@ -10,12 +10,17 @@
     </button>
     <div class="container">
       <input
-        class="search-input"
-        type="text"
-        matInput
-        placeholder="Kitap, yazar adı arayın"
-      />
-    </div>
+      id="typeahead-focus"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model"
+      [ngbTypeahead]="search"
+      (focus)="focus$.next($any($event).target.value)"
+      (click)="click$.next($any($event).target.value)"
+      #instance="ngbTypeahead"
+      placeholder="Bir şeyler arayın"
+    />
+        </div>
 
     <a class="book" [routerLink]="['/add-book']">Kitap Ekle</a>
     <a class="book" [routerLink]="['/all-book']">Tüm Kitaplar</a>
