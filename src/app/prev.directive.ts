@@ -11,8 +11,8 @@ export class PrevDirective {
   prevFunc(){
     var elm = this.el.nativeElement.parentElement.parentElement.children[0];
     var item = elm.getElementsByClassName("item")
-    
-    elm.prepend(item[item.lenght-1])
+    var arr = Array.prototype.slice.call(item)
+    elm.prepend(item[arr.length-1])
   }
 
 

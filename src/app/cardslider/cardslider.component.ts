@@ -48,8 +48,7 @@ export class CardsliderComponent implements OnInit{
   }
 
   cardtatus:boolean=false;
-  arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  totalCards: number = this.arr.length;
+  totalCards: number = 10;
   currentPage: number = 1;
   pagePosition: string = "0%";
   cardsPerPage: number=0;
@@ -73,11 +72,14 @@ export class CardsliderComponent implements OnInit{
 
   ngOnInit() {
     this.cardsPerPage = this.getCardsPerPage();
-    this.initializeSlider();
     this.getBooks();
   }
   getBooks(){
-    this.httpService.Get("https://localhost:7191/books","").subscribe((resp)=>{this.datas=resp})
+    this.httpService.Get("https://localhost:7191/books","").subscribe((resp)=>{
+      this.datas=resp
+      this.totalCards = this.datas.length;
+      this.initializeSlider();
+    })
   }
   initializeSlider() {
     this.totalPages = Math.ceil(this.totalCards / this.cardsPerPage);
