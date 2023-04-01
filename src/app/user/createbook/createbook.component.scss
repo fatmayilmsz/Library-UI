@@ -1,5 +1,4 @@
 .main {
-  border: 1px solid black;
   height: 115%;
   width: 41%;
   top: 70;
@@ -60,14 +59,16 @@
   left: 74%;
 }
 .for-create-book {
-  position: absolute;
-  top: -130;
-  left: 2%;
+  position: relative;
+  top: 380px;
+ text-align: center;
+ left: 10px;
 }
 .category-component {
-  position: absolute;
-  top: 550;
-  left: 40;
+  text-align: justify;
+ position: relative;
+ top: 450px;
+ text-align: center;
 }
 .book-category {
   width: 64%;

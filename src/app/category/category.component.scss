@@ -1,0 +1,40 @@
+.main {
+  width: 900px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+}
+.name1,
+.name2,
+.name3,
+.name4,
+.name5 {
+  margin-left: 20px;
+  width: 100px;
+}
+.name2 {
+  position: relative;
+  left: 200px;
+  top: -341px;
+}
+.name3 {
+  position: relative;
+  left: 400px;
+  top: -683px;
+}
+.name4 {
+  position: relative;
+  left: 600px;
+  top: -1025px;
+}
+.name5 {
+  position: relative;
+  left: 800px;
+  top: -1365px;
+}
+.link {
+  color: grey;
+}
+.link:hover {
+  text-decoration: none;
+}
