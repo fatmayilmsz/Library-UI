@@ -10,9 +10,9 @@
   margin-top: 60px;
 }
 .detailbook-image {
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-bottom: 60px;
+  position: absolute;
+  top: 160;
+  left: 25%;
 }
 .input {
   border: 1px solid gray;
@@ -32,18 +32,21 @@
 }
 .book-name {
   position: absolute;
+  left: 200;
   top: 30px;
   width: 64%;
   height: 30px;
 }
 .book-author {
   position: absolute;
+  left: 200;
   top: 70px;
   width: 64%;
   height: 30px;
 }
 .book-publishing {
   position: absolute;
+  left: 200;
   top: 110px;
   width: 64%;
   height: 30px;
@@ -52,6 +55,7 @@
   width: 64%;
   height: 100px;
   position: absolute;
+  left: 200;
   top: 190px;
 }
 .submit-button {
@@ -62,28 +66,71 @@
 .for-create-book {
   position: relative;
   top: 380px;
- text-align: center;
- left: 10px;
+  text-align: center;
+  left: 10px;
 }
 .category-component {
   text-align: justify;
- position: relative;
- top: 450px;
- text-align: center;
+  position: relative;
+  top: 450px;
+  text-align: center;
 }
 .book-category {
   width: 64%;
   position: absolute;
   height: 30px;
+  left: 200;
   top: 150px;
 }
 .hr {
   margin-top: 50px;
 }
-.div-width{
+.div-width {
   height: 10px;
   margin-top: 50px;
 }
-.margin{
+.margin {
   margin-top: 150px;
 }
+.successAlert {
+  position: absolute;
+  width: 100%;
+  top: 100;
+}
+.container {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #13121269;
+  border-radius: 5px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.inpdddut[type="file"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #63615f;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.inpdddut[type="submit"] {
+  padding: 10px 20px;
+  background-color: #3a4042;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inpdddut[type="submit"]:hover {
+  background-color: #006F8F;
+}
+    

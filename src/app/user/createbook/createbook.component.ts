@@ -2,19 +2,48 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ServiceService } from 'src/app/service.service';
 
+interface Alert {
+	type: string;
+	message: string;
+}
+
+const ALERTS: Alert[] = [
+	{
+		type: 'success',
+		message: 'This is an success alert',
+	}
+];
+
 @Component({
   selector: 'app-createbook',
   templateUrl: './createbook.component.html',
   styleUrls: ['./createbook.component.scss']
 })
+
+
 export class CreatebookComponent implements OnInit{
 
-  constructor(private httpService:ServiceService){}
+
+  constructor(private httpService:ServiceService){		
+    this.alerts = [];
+  }
   name:String="";
   author:String="";
   publishing:String="";
   category:String="";
   summary:String="";
+  alerts!: Alert[];
+
+
+
+	close(alert: Alert) {
+		this.alerts.splice(this.alerts.indexOf(alert), 1);
+	}
+
+	reset() {
+		this.alerts = Array.from(ALERTS);
+	}
+ 
 
   get form_name(){
     return this.createBookForm.get('form_name');
@@ -38,6 +67,7 @@ export class CreatebookComponent implements OnInit{
   createBook(){
     let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary}
      this.httpService.Post("https://localhost:7191/books",params).subscribe((resp)=>{
+      this.reset()
      }, (err) => {
       alert(err.message)
     });
