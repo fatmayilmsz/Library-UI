@@ -33,6 +33,75 @@
     </div>
   </mat-tab>
   <mat-tab label="Adreslerim"> Content 2 </mat-tab>
-  <mat-tab label="Okuduklarım"> Content 3 </mat-tab>
-  <mat-tab label="Şu an bende olan kitaplar"> Content 3 </mat-tab>
+
+  <mat-tab label="Okuduklarım">
+    <div class="container" #container>
+      <div class="cards">
+        <div class="overflow">
+          <div
+            class="card"
+            *ngFor="let data of datas"
+            [routerLink]="['/book-detail']"
+          >
+            <div class="book-content">
+              <img class="book-img" src="assets/images/card.png" />
+              <div class="book-text">
+                <h3 class="text-center">sdfsdf</h3>
+                <h3 class="text-center">sdf</h3>
+                <h3 class="text-center">dsf</h3>
+                <h5 class="text-center">sdfsd</h5>
+              </div>
+              <div class="text-center">
+                <button
+                  class="fav btn btn-light"
+                  mat-icon-button
+                  color="warn"
+                  aria-label="Example icon button with a heart icon"
+                >
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Şu an bende olan kitaplar">
+    <span class="warning"
+      >*Okundu olarak işaretlediğinde kitap tekrar yayınlanacaktır.</span
+    >
+    <div class="container" #container>
+      <div class="cards">
+        <div class="overflow">
+          <div
+            class="card"
+            *ngFor="let data of datas"
+            [routerLink]="['/book-detail']"
+          >
+            <div class="book-content">
+              <img class="book-img" src="assets/images/card.png" />
+              <div class="book-text">
+                <h3 class="text-center">sdfsdf</h3>
+                <h3 class="text-center">sdf</h3>
+                <h3 class="text-center">dsf</h3>
+                <h5 class="text-center">sdfsd</h5>
+              </div>
+              <div class="text-center">
+                <button
+                  type="button"
+                  class="btn btn-outline-secondary me-2"
+                  placement="bottom"
+                  ngbTooltip="Okundu olarak işaretle"
+                >
+                  Okundu
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
 </mat-tab-group>
