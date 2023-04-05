@@ -22,7 +22,7 @@
           <div class="book-content">
             <img class="book-img" src="assets/images/card.png" />
             <div class="book-text">
-              <h3 [routerLink]="['/book-detail']" class="text-center">{{ data.name }}</h3>
+              <h3 [routerLink]="['/book-detail', data.categoryId, data.id]" class="text-center">{{ data.name }}</h3>
               <h3 class="text-center">{{ data.author }}</h3>
               <h3 class="text-center">{{ data.publishing }}</h3>
               <h3 class="text-center">{{ data.category }}</h3>

@@ -20,7 +20,7 @@ import { AccountComponent } from './account/account.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: HomePageComponent },
-  {path: 'book-detail', component: DetailbookComponent },
+  {path: 'book-detail/:category/:id', component: DetailbookComponent },
   {path: 'add-book', component: CreatebookComponent, canActivate: [AuthGuard]},
   {path: 'all-book', component: AllbookComponent },
   {path: 'admin', component: AdminComponent},
