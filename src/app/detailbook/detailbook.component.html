@@ -1,27 +1,35 @@
-<div class="main">
-  <img class="detailbook-image" src="assets/images/card.png" />
-  <h1 class="book-name">Buzun Anıları</h1>
-  <h4 class="book-author">Steven Erikson |</h4>
-  <h4 class="book-publishing">Epsilon Yayınları</h4>
-  <p class="book-summary">
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the
-    1500s, when an unknown printer took a galley of type and scrambled it to
-    make a type specimen book
-  </p>
-  <h5 class="read-book">Bu kitap 34 kez okunmuştur.</h5>
-
-  <button
-    class="fav"
-    mat-icon-button
-    color="warn"
-    aria-label="Example icon button with a heart icon"
-  >
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button class="talep" mat-raised-button>Talep Et</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img class="detailbook-image" src="assets/images/card.png" />
+      <h1 class="book-name">Buzun Anıları</h1>
+      <h4 class="book-author">Steven Erikson |</h4>
+      <h4 class="book-publishing">Epsilon Yayınları</h4>
+      <p class="book-summary">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s, when an unknown printer took a galley of type and scrambled it to
+        make a type specimen book
+      </p>
+      <h5 class="read-book">Bu kitap 34 kez okunmuştur.</h5>
+  
+      <button
+        class="fav"
+        mat-icon-button
+        color="warn"
+        aria-label="Example icon button with a heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button class="talep" mat-raised-button>Talep Et</button>
+    </div>
+    <div class="col-md-12 div-width">  
+      <app-bookofthemonth class="for-create-book"></app-bookofthemonth>
+    </div>
+    <div class="row categories">
+      <app-category ></app-category>
+    </div>
+  </div>
 
   <hr class="hr" />
-  <app-bookofthemonth class="for-create-book"></app-bookofthemonth>
 </div>
-<app-category class="category-component"></app-category>

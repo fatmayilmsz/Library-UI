@@ -1,5 +1,12 @@
+<div class="row justify-content-center">
+  <div class="col-md-12 slogan">
+    <h4 class="text-align">
+      Slogan - Slogan - Slogan - Slogan - Slogan - Slogan
+    </h4>
+  </div>
+</div>
 <p>
-  <mat-toolbar>
+  <mat-toolbar class="main-nav">
     <button
       mat-icon-button
       class="example-icon"
@@ -10,17 +17,17 @@
     </button>
     <div class="container">
       <input
-      id="typeahead-focus"
-      type="text"
-      class="form-control"
-      [(ngModel)]="model"
-      [ngbTypeahead]="search"
-      (focus)="focus$.next($any($event).target.value)"
-      (click)="click$.next($any($event).target.value)"
-      #instance="ngbTypeahead"
-      placeholder="Bir şeyler arayın"
-    />
-        </div>
+        id="typeahead-focus"
+        type="text"
+        class="form-control"
+        [(ngModel)]="model"
+        [ngbTypeahead]="search"
+        (focus)="focus$.next($any($event).target.value)"
+        (click)="click$.next($any($event).target.value)"
+        #instance="ngbTypeahead"
+        placeholder="Bir şeyler arayın"
+      />
+    </div>
 
     <a class="book" [routerLink]="['/add-book']">Kitap Ekle</a>
     <a class="book" [routerLink]="['/all-book']">Tüm Kitaplar</a>
@@ -44,3 +51,8 @@
     </mat-menu>
   </mat-toolbar>
 </p>
+<div class="row justify-content-center">
+  <div class="col-md-12 nav">
+    <a class="nav-item">mini nav</a>
+  </div>
+</div>

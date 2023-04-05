@@ -1,17 +1,14 @@
-.main {
-  border: 1px solid black;
+.container {
   height: 115%;
   width: 41%;
   top: 70;
   left: 30%;
   position: absolute;
   right: 20%;
-  border-bottom: none;
-  border-top: none;
 }
 .detailbook-image {
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 100px;
+  margin-left: 10px;
   margin-bottom: 60px;
 }
 .input {
@@ -32,19 +29,19 @@
 }
 .book-name {
   position: absolute;
-  top: 30px;
+  top: 100;
   width: 64%;
   height: 30px;
 }
 .book-author {
   position: absolute;
-  top: 70px;
+  top: 140;
   width: 64%;
   height: 30px;
 }
 .book-publishing {
   position: absolute;
-  top: 110px;
+  top: 140;
   width: 64%;
   height: 30px;
 }
@@ -52,7 +49,7 @@
   width: 64%;
   height: 100px;
   position: absolute;
-  top: 150px;
+  top: 180px;
 }
 .submit-button {
   position: absolute;
@@ -60,42 +57,40 @@
   left: 74%;
 }
 .for-create-book {
-  position: absolute;
-  top: -130;
-  left: 2%;
+  position: relative;
+  top: 20px;
+  left: -50px;
+  text-align: center;
 }
-.category-component {
-  position: absolute;
-  top: 550;
-  left: 40;
+.div-width {
+  height: 10px;
+  margin-top: 50px;
+}
+
+.categories {
+display: flex;
+justify-content: center;
+margin-top: 300;
 }
 .book-name {
   position: absolute;
-  left: 200;
+  left: 250;
 }
 .book-author {
-  left: 200;
+  left: 250;
   opacity: 0.6;
+  width: 300;
 }
 .book-publishing {
-  top: 70;
-  left: 325;
+  left: 385;
   opacity: 0.6;
+  width: 300;
 }
 .book-summary {
-  left: 200;
-  top: 100;
+  left: 250;
+  width: 400;
 }
 .read-book {
   margin-top: -50;
-  margin-left: 30;
-}
-.talep,
-.fav {
-  top: -20;
-  margin-left: 215px;
-}
-.fav {
-  top: -10;
-  left: 200;
+  margin-left: 10;
 }

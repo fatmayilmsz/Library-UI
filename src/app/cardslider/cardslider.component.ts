@@ -13,11 +13,8 @@ export class CardsliderComponent implements OnInit{
 
   private _name : string="";
   private _author : string="";
-
   private _publishing : string="";
   private _category : string="";
-
-
 
   get name():string{
     return this._name;
@@ -25,7 +22,6 @@ export class CardsliderComponent implements OnInit{
   set name(val:string){
     this._name=val;
   }
-
   get publishing():string{
     return this._publishing;
   }
