@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +10,12 @@ export class AppComponent {
   title = 'library';
 
 
-  public open(modal: any): void {
-    this.modalService.open(modal);
-  }
+   public open(modal: any): void {
+     this.modalService.open(modal);
+   }
 
 	constructor(private modalService: NgbModal) {
+    
 	}
   
 }

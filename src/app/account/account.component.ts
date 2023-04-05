@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
+import {ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-account',
@@ -8,7 +9,7 @@ import { ServiceService } from '../service.service';
 })
 export class AccountComponent implements OnInit{
   datas:any=[];
-  constructor(private httpService:ServiceService){}
+  constructor(private httpService:ServiceService,private modalService: NgbModal){}
   totalCards: number = 10;
 
   ngOnInit() {
@@ -21,5 +22,28 @@ export class AccountComponent implements OnInit{
       this.totalCards = this.datas.length;
     })
   }
+  closeResult = '';
+
+  open(content:any) {
+		this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' }).result.then(
+			(result) => {
+				this.closeResult = `Closed with: ${result}`;
+			},
+			(reason) => {
+				this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+			},
+		);
+	}
+
+
+	private getDismissReason(reason: any): string {
+		if (reason === ModalDismissReasons.ESC) {
+			return 'by pressing ESC';
+		} else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+			return 'by clicking on a backdrop';
+		} else {
+			return `with: ${reason}`;
+		}
+	}
 
 }
