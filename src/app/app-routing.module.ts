@@ -30,9 +30,6 @@ const routes: Routes = [
   {path: 'add-author', component: CreateAuthorComponent },
   {path: 'forbidden', component: NotFoundComponent },
   {path: 'account', component: AccountComponent },
-
-
-
 ];
 
 @NgModule({

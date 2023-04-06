@@ -1,7 +1,6 @@
 import { Component,HostListener, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 
-
 @Component({
   selector: 'app-cardslider',
   templateUrl: './cardslider.component.html',
@@ -15,6 +14,18 @@ export class CardsliderComponent implements OnInit{
   private _author : string="";
   private _publishing : string="";
   private _category : string="";
+
+  public serializeData(data: any): string {
+    const result: any = {};
+    for (const key in data) {
+      if (Object.prototype.hasOwnProperty.call(data, key)) {
+        if (typeof data[key] !== 'function') {
+          result[key] = data[key];
+        }
+      }
+    }
+    return JSON.stringify(result);
+  }
 
   get name():string{
     return this._name;

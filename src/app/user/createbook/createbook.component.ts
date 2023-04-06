@@ -33,6 +33,7 @@ export class CreatebookComponent implements OnInit{
   category:String="";
   summary:String="";
   alerts!: Alert[];
+  image:String="";
 
 
 
@@ -60,13 +61,31 @@ export class CreatebookComponent implements OnInit{
   get form_summary(){
     return this.createBookForm.get('form_summary');
   }
-          
+
+  get form_image(){
+    return this.createBookForm.get('form_image');
+  }
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+  
+    if (file) {
+      const reader = new FileReader();
+  
+      reader.onload = (e: any) => {
+        this.image = btoa(e.target.result);;
+       };
+       reader.readAsBinaryString(file);
+    }
+}
+
 
   ngOnInit(): void {
   }
   createBook(){
-    let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary}
-     this.httpService.Post("https://localhost:7191/books",params).subscribe((resp)=>{
+    let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary, image:this.image}
+     console.log(params);
+    this.httpService.Post("https://localhost:7191/books",params).subscribe((resp)=>{
       this.reset()
      }, (err) => {
       alert(err.message)
@@ -78,7 +97,6 @@ export class CreatebookComponent implements OnInit{
     form_publishing: new FormControl('',[Validators.required]),
     form_category: new FormControl('',[Validators.required]),
     form_summary: new FormControl('',[Validators.required]),
+    form_image: new FormControl()
  })
- 
-
 }

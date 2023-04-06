@@ -125,6 +125,6 @@
 <div class="container detailbook-image">
   <form>
     <label for="arquivo">Kitap Görseli:</label>
-    <input accept=".jpg, .jpeg, .png, .gif, .pdf" class="inpdddut" name="arquivo" id="arquivo" type="file">
+    <input formControlName="form_image" accept=".jpg, .jpeg, .png, .gif, .pdf" class="inpdddut" name="arquivo" id="arquivo" type="file" (change)="onFileSelected($event)">
   </form>
 </div>
