@@ -19,7 +19,7 @@ export class DetailbookComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.httpService.Get(`https://localhost:7191/${this.route.snapshot.paramMap.get('category')}/${this.route.snapshot.paramMap.get('id')}`, "").subscribe((resp) => {
+    this.httpService.Get(`https://localhost:7191/books/${this.route.snapshot.paramMap.get('category')}/${this.route.snapshot.paramMap.get('id')}`, "").subscribe((resp) => {
       this.book = resp;
     });
   }
