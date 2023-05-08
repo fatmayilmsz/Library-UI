@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Book } from 'src/app/data_interfaces/Book';
 import { ServiceService } from 'src/app/service.service';
 
 interface Alert {
@@ -27,13 +28,35 @@ export class CreatebookComponent implements OnInit{
   constructor(private httpService:ServiceService){		
     this.alerts = [];
   }
-  name:String="";
-  author:String="";
-  publishing:String="";
-  category:String="";
-  summary:String="";
+  // name:String="";
+  // author:String="";
+  // publishing:String="";
+  // category:String="";
+  // summary:String="";
   alerts!: Alert[];
-  image:String="";
+  // image:String="";
+  public book:Book|null = {
+    id: 0,
+    name: "",
+    author: {
+      id: 0,
+      name: "",
+      lastName: "",
+      category: {
+        id: 0,
+        name: ""
+      },
+      image: ""
+    },
+    publishing: "",
+    category: {
+      id: 0,
+      name: ""
+    },
+    summary: "",
+    readCount: 0,
+    image: ""
+  };
 
 
 
@@ -73,7 +96,7 @@ export class CreatebookComponent implements OnInit{
       const reader = new FileReader();
   
       reader.onload = (e: any) => {
-        this.image = btoa(e.target.result);;
+        this.book!.image = btoa(e.target.result);;
        };
        reader.readAsBinaryString(file);
     }
@@ -83,11 +106,12 @@ export class CreatebookComponent implements OnInit{
   ngOnInit(): void {
   }
   createBook(){
-    let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary, image:this.image}
-     console.log(params);
-    this.httpService.Post("https://localhost:7191/books",params).subscribe((resp)=>{
+    //let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary, image:this.image}
+    console.log(this.book);
+    this.httpService.Post("https://localhost:7191/books/add",this.book).subscribe((resp)=>{
       this.reset()
      }, (err) => {
+      console.log(err);
       alert(err.message)
     });
   }
