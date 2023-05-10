@@ -1,0 +1,17 @@
+<div class="author-div">
+    <h1 class="author-title" style="font-size: 35px;">YAZARLAR</h1>
+    <img class="author-img" src="assets/images/5.jpg" />
+</div>
+<div class="container">
+    <input
+      id="typeahead-focus"
+      type="text"
+      class="form-control"
+      [(ngModel)]="model"
+      [ngbTypeahead]="search"
+      (focus)="focus$.next($any($event).target.value)"
+      (click)="click$.next($any($event).target.value)"
+      #instance="ngbTypeahead"
+      placeholder="Yazar arayın"
+    />
+  </div>

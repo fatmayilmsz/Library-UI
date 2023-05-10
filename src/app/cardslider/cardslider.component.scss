@@ -22,7 +22,17 @@
   margin-right: 10px;
   position: relative;
   border: 1px solid rgb(231, 220, 220);
+  cursor: pointer;
 }
+.talep{
+  border: 1px solid rgb(192, 166, 118);
+  color: rgb(192, 166, 118);
+}
+.talep:hover{
+  color: white;
+  background-color:rgb(192, 166, 118);
+}
+
 .no-right-margin {
   margin-right: 0px;
 }
@@ -53,12 +63,10 @@
 .right {
   right: 0;
 }
-.card-list-name,
-.container {
-  margin-right: 10%;
-}
+
 .card-list-name {
   margin-top: 50px;
+  margin-left: 60px;
 }
 h1 {
   font: 394 35px/53px Roboto, sans-serif;
@@ -73,11 +81,20 @@ h1 {
 }
 .text-center {
   text-align: center;
-  margin-top: 3px;
+  margin-top: 10px;
 }
 .text-center:hover{
   color: gray;
 }
 h3 {
   margin: 0px 0 -11px;
+}
+.goToAll{
+  display: block;
+  margin-left: 950px;
+  color: gray;
+  text-decoration: underline;
+}
+.goToAll:hover{
+  text-decoration: none;
 }

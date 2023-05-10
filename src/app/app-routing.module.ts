@@ -9,13 +9,16 @@ import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { ApprovalBookComponent } from './approval-book/approval-book.component';
 import { SliderPictureComponent } from './slider-picture/slider-picture.component';
-import { FeaturedBooksComponent } from './featured-books/featured-books.component';
 import { BookAuthorPictureComponent } from './book-author-picture/book-author-picture.component';
 import { CreateAuthorComponent } from './create-author/create-author.component';
 import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './not.found/not.found.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { AccountComponent } from './account/account.component';
+import { MyInformationComponent } from './my-information/my-information.component';
+import { MyAddressComponent } from './my-address/my-address.component';
+import { ReadBookComponent } from './read-book/read-book.component';
+import { ReadingBookComponent } from './reading-book/reading-book.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { AuthorComponent } from './author/author.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,7 +32,16 @@ const routes: Routes = [
   {path: 'book-author', component: BookAuthorPictureComponent },
   {path: 'add-author', component: CreateAuthorComponent },
   {path: 'forbidden', component: NotFoundComponent },
-  {path: 'account', component: AccountComponent },
+  {path: 'bilgilerim', component: MyInformationComponent },
+  {path: 'adreslerim', component: MyAddressComponent },
+  {path: 'okudugum-kitaplar', component: ReadBookComponent },
+  {path: 'su-an-okuduklarim', component: ReadingBookComponent },
+  {path: 'favoriler', component: FavoritesComponent },
+  {path: 'yazarlar', component: AuthorComponent }
+
+
+
+
 ];
 
 @NgModule({

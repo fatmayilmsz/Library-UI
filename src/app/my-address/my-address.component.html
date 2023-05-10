@@ -1,0 +1,137 @@
+<div class="route">
+    <a>Anasayfa</a><a> > </a>
+    <a>Hesabım</a><a> > </a>
+    <a>Adreslerim</a>
+</div>
+<div class="account-nav  justify-content-center">
+    <div class="row nav">
+      <a class="nav-item col-md-3" [routerLink]="['/bilgilerim']">BİLGİLERİM</a>
+      <a class="nav-item col-md-3" [routerLink]="['/adreslerim']" style="color:rgb(192, 166, 118);border-bottom: 2px solid rgb(192, 166, 118);">ADRESLERİM</a>
+      <a class="nav-item col-md-3" [routerLink]="['/okudugum-kitaplar']">OKUDUĞUM KİTAPLAR</a>
+      <a class="nav-item col-md-3" [routerLink]="['/su-an-okuduklarim']">ŞU AN BENDE OLAN KİTAPLAR</a>
+    </div>
+  </div>
+  <div class="add-item">
+    <button
+      class="add-address"
+      mat-raised-button
+      (click)="openAddressPopup()"
+    >
+      + Adres Ekle</button
+    ><br /><br />
+  </div>
+  <ng-template #addressPopup>
+    <div [formGroup]="addAddressForm" class="popup-container">
+      <h2 style="text-align: center">Adres Ekle</h2>
+      <br />
+      <mat-form-field appearance="outline">
+        <mat-label>Adı Soyadı</mat-label>
+        <input
+          [(ngModel)]="fullName"
+          formControlName="form_fullName"
+          matInput
+          placeholder="{{ getFullName() }}"
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Adres Başlığı</mat-label>
+        <input
+          [(ngModel)]="title"
+          matInput
+          placeholder="Lütfen Adres Başlığını Giriniz."
+          formControlName="form_title"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label>İl</mat-label>
+        <mat-select [(ngModel)]="city" formControlName="form_city" required>
+          <mat-option *ngFor="let i of cities" value="i">{{ i }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>İlçe</mat-label>
+        <mat-select
+          [(ngModel)]="district"
+          formControlName="form_district"
+          required
+        >
+          <mat-option value="i">İlçe</mat-option>
+        </mat-select> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label>Mahalle / Köy</mat-label>
+        <input
+          value="i"
+          [(ngModel)]="neighborhood"
+          formControlName="form_neighborhood"
+          matInput
+          placeholder="Lütfen Mahalle / Köy Giriniz."
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Bina/Apt./Blok No</mat-label>
+        <input
+          [(ngModel)]="buildingnumber"
+          formControlName="form_buildingnumber"
+          matInput
+        /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label>Kat No</mat-label>
+        <input
+          [(ngModel)]="floorNumber"
+          formControlName="form_floorNumber"
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Daire No</mat-label>
+        <input
+          [(ngModel)]="apartmentNumber"
+          formControlName="form_apartmentNumber"
+          matInput
+        /> </mat-form-field
+      ><br />
+      <mat-form-field style="width: 100%" appearance="outline">
+        <mat-label>Teslimat Adresi</mat-label>
+        <input
+          [(ngModel)]="deliveryAddress"
+          formControlName="form_deliveryAddress"
+          matInput
+          placeholder="Sokak, cadde, apartman adı, daire no ve diğer bilgileri eksiksiz girmeniz 'kargo teslimatı' için çok önemlidir!"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label>Posta Kodu</mat-label>
+        <input
+          [(ngModel)]="postCode"
+          formControlName="form_postCode"
+          matInput
+        />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Cep Telefonu</mat-label>
+        <input
+          [(ngModel)]="phoneNumber"
+          formControlName="form_phoneNumber"
+          matInput
+          placeholder="0(5XX) XXX XX XX"
+        />
+        <mat-hint style="width: 100%"
+          >*Cep telefonu numaranızı başında <b>0</b> olacak şekilde
+          giriniz.</mat-hint
+        > </mat-form-field
+      ><br />
+      <button
+        style="width: 100%; margin-top: 50px"
+        mat-raised-button
+        (click)="addAddress()"
+        [disabled]="addAddressForm.invalid"
+      >
+        Kaydet</button
+      ><br />
+      <mat-checkbox type="checkbox" [color]="color"
+        >Bu adresi fatura adresi olarak da kullan.</mat-checkbox
+      ><br />
+    </div>
+  </ng-template>

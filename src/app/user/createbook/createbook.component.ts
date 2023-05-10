@@ -85,7 +85,7 @@ export class CreatebookComponent implements OnInit{
   createBook(){
     let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary, image:this.image}
      console.log(params);
-    this.httpService.Post("https://localhost:7191/books",params).subscribe((resp)=>{
+    this.httpService.Post("https://localhost:7191/books/add",params).subscribe((resp)=>{
       this.reset()
      }, (err) => {
       alert(err.message)

@@ -1,7 +1,7 @@
-<div class="row justify-content-center">
+<div style="width: 100%;" class="row justify-content-center">
   <div class="col-md-12 slogan">
-    <h4 class="text-align">
-      Slogan - Slogan - Slogan - Slogan - Slogan - Slogan
+    <h4 class="text-align" style="margin-bottom: 5px;">
+      Dijital Kütüphane Bir Tık Ötenizde
     </h4>
   </div>
 </div>
@@ -30,7 +30,7 @@
     </div>
 
     <a class="book" [routerLink]="['/add-book']">Kitap Ekle</a>
-    <a class="book" [routerLink]="['/all-book']">Tüm Kitaplar</a>
+    <a class="book" [routerLink]="['/favoriler']">Favoriler</a>
     <a routerLink="/login" *ngIf="isUserLoggedIn() == false" class="book log">
       Giriş Yap/Kayıt Ol</a
     >
@@ -44,15 +44,23 @@
       {{ getFullName() }}
     </button>
     <mat-menu #menu="matMenu">
-      <button [routerLink]="['/account']" mat-menu-item>Hesabım</button>
-      <button mat-menu-item>Favoriler</button>
-      <button mat-menu-item>Okuduğum Kitaplar</button>
+      <button [routerLink]="['/bilgilerim']" mat-menu-item>Hesabım</button>
+      <button mat-menu-item [routerLink]="['/favoriler']">Favoriler</button>
+      <button mat-menu-item [routerLink]="['/okudugum-kitaplar']">Okuduğum Kitaplar</button>
+      <button mat-menu-item [routerLink]="['/su-an-okuduklarim']">Şu An Bende Olan Kitaplar</button>
       <button (click)="logOut()" mat-menu-item>Çıkış Yap</button>
     </mat-menu>
   </mat-toolbar>
 </p>
-<div class="row justify-content-center">
-  <div class="col-md-12 nav">
-    <a class="nav-item">mini nav</a>
+<div class="justify-content-center">
+  <div class="row nav" >
+    <a class="nav-item col-md-2" [routerLink]="['/#']">Yayınevleri</a>
+    <a class="nav-item col-md-2" [routerLink]="['/yazarlar']">Yazarlar</a>
+    <a class="nav-item col-md-2" [routerLink]="['/all-book']">Kitaplar</a>
+    <a class="nav-item col-md-2" [routerLink]="['/adreslerim']">Adreslerim</a>
+    <a class="nav-item col-md-2" [routerLink]="['/bilgilerim']">Bilgilerim</a>
+    <a class="nav-item col-md-2" [routerLink]="['/#']">Kategoriler</a>
+    
   </div>
 </div>
+

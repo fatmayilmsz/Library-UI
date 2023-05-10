@@ -10,8 +10,8 @@
   margin-top: 100px;
   margin-left: 10px;
   margin-bottom: 60px;
-  width: 210;
-  height: 150;
+  width: 150;
+  height: 210;
 }
 .input {
   border: 1px solid gray;
@@ -70,9 +70,9 @@
 }
 
 .categories {
-display: flex;
-justify-content: center;
-margin-top: 300;
+  display: flex;
+  justify-content: center;
+  margin-top: 300;
 }
 .book-name {
   position: absolute;
@@ -95,4 +95,12 @@ margin-top: 300;
 .read-book {
   margin-top: -50;
   margin-left: 10;
+}
+.talep{
+  border: 1px solid rgb(192, 166, 118);
+  color: rgb(192, 166, 118);
+}
+.talep:hover{
+  color: white;
+  background-color:rgb(192, 166, 118);
 }

@@ -33,10 +33,13 @@ import { BookAuthorPictureComponent } from './book-author-picture/book-author-pi
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateAuthorComponent } from './create-author/create-author.component';
 import { NotFoundComponent } from './not.found/not.found.component';
-import { AccountComponent } from './account/account.component';
-import { CarouselComponent } from './carousel/carousel.component';
 import { CommonModule } from '@angular/common';
-
+import { MyInformationComponent } from './my-information/my-information.component';
+import { MyAddressComponent } from './my-address/my-address.component'; 
+import { ReadBookComponent } from './read-book/read-book.component';
+import { ReadingBookComponent } from './reading-book/reading-book.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+import { AuthorComponent } from './author/author.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,12 @@ import { CommonModule } from '@angular/common';
     BookAuthorPictureComponent,
     CreateAuthorComponent,
     NotFoundComponent,
-    AccountComponent,
+    MyInformationComponent,
+    MyAddressComponent,
+    ReadBookComponent,
+    ReadingBookComponent,
+    FavoritesComponent,
+    AuthorComponent
   ],
   imports: [
     CommonModule,

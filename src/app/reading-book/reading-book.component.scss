@@ -1,0 +1,85 @@
+.nav-item {
+    text-decoration: none;
+    color: black;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 15px;
+  }
+  .nav-item:hover {
+    color: rgb(192, 166, 118);
+    background-color: rgb(252, 252, 248);
+    border-bottom: 2px solid rgb(192, 166, 118);
+  }
+  .route {
+    margin: 50px;
+  }
+  .warning-message{
+    height: 50px;
+    border-radius: 10px;
+    margin: 20px;
+    border: 1px solid gray;
+    background-color: #EBFFF3;
+   }
+   .warning{
+    font-size: 15px;
+    position: absolute;
+    top: 340px;
+    left: 17%;
+    right: 15%;
+   }
+
+
+
+
+   
+  .cards {
+    overflow: hidden;
+    margin-top: 50px;
+    margin-left: 10%;
+  }
+  .overflow {
+    position: relative;
+    transition: left 0.5s ease-in-out;
+  }
+  .card {
+    height: 460px;
+    width: 200px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    border: 1px solid rgb(231, 220, 220);
+    cursor: pointer;
+
+  }
+  .card-list-name {
+    margin-top: 40px;
+    margin-left: 10%;
+
+  }
+  
+  .btn{
+    border: 1px solid rgb(192, 166, 118);
+    color: rgb(192, 166, 118);
+  }
+  .btn:hover{
+    color: white;
+    background-color:rgb(192, 166, 118);
+  }
+  .book-content {
+    margin-top: 10px;
+  }
+  .book-img {
+    height: 210px;
+    margin-left: 24px;
+    width: 150;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-center:hover{
+    color: gray;
+  }
+
+  
+  

@@ -70,7 +70,8 @@ const states = [
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
+	firstName:any="";
+	lastName:any="";
   constructor(private authService: AuthService) {}
   ngOnInit() {
   }
@@ -93,7 +94,9 @@ export class NavbarComponent {
 	};
 
   getFullName():any{
-    return localStorage.getItem("ns");
+	this.firstName = localStorage.getItem("n")
+	this.lastName = localStorage.getItem("s")
+    return this.firstName + " " + this.lastName;
   }
 
   isUserLoggedIn():boolean{

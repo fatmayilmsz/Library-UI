@@ -28,12 +28,14 @@
   transform: translate(-50%, -50%);
 }
 .prev {
+  color: white;
   position: absolute;
   left: 18%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
 .next {
+  color: white;
   position: absolute;
   right: 18%;
   top: 50%;
@@ -42,9 +44,10 @@
 //gggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
 .next:hover,
 .prev:hover {
-  height: 30px;
-  width: 30px;
-  background-color: gray;
+
+  height: 40px;
+  width: 40px;
+  background-color: rgb(187, 181, 181);
   opacity: 0.2;
   border-radius: 50px;
 }
