@@ -1,0 +1,115 @@
+
+
+.link{
+    color: black;
+  }
+  .form-control {
+    width: 450px;
+    border: 1px solid #0000AA;
+}
+
+
+  //--
+  
+.author-div {
+    border: 1px solid #1f4188;
+    height: 75%;
+    width: 20%;
+    margin-left: 150px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  .categories-list {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .categories-title{
+    display: flex;
+    justify-content: center;
+
+}
+.author-img{
+    border: 1px solid red;
+    height: 150px;
+    width: 150px;
+    margin-left: 25%;
+    border-radius: 80px;
+}
+  .container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 180;
+    left: 12.5%;
+  }
+  .cards {
+    width: calc(100% - 80px);
+    overflow: hidden;
+    width: 65%;
+    margin-left: 550px;
+    position: absolute;
+    top: 300;
+  }
+  .overflow {
+    position: relative;
+    transition: left 0.5s ease-in-out;
+  }
+  .card {
+    height: 400px;
+    width: 190px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+    border: 1px solid rgb(231, 220, 220);
+    cursor: pointer;
+  }
+  .talep{
+    border: 1px solid rgb(192, 166, 118);
+    color: #FF9900;
+  }
+  .talep:hover{
+    color: white;
+    background-color:#FF9900;
+  }
+  
+  .no-right-margin {
+    margin-right: 0px;
+  }
+  .card span {
+    font-size: 48px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .card-list-name {
+    margin-top: 50px;
+    margin-left: 60px;
+  }
+
+  .book-img {
+    height: 210px;
+    margin-left: 20px;
+    width: 150;
+  }
+  .book-content {
+    margin-top: 10px;
+  }
+  .text-center {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .text-center:hover{
+    color: gray;
+  }
+  h3 {
+    margin: 0px 0 -11px;
+  }
+    .title {
+        position: absolute;
+        top: 250;
+        left: 40%;
+      }
+      

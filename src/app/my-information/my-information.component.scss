@@ -6,9 +6,9 @@
   padding: 15px;
 }
 .nav-item:hover {
-  color: rgb(192, 166, 118);
+  color: #0000AA;
   background-color: rgb(252, 252, 248);
-  border-bottom: 2px solid rgb(192, 166, 118);
+  border-bottom: 2px solid #0000AA;
 }
 .route {
   margin: 50px;
@@ -19,10 +19,7 @@
   margin-left: 50%;
   top: 53%;
 }
-.button {
-  top: 2%;
-  width: 150%;
-}
+
 .update-name {
     position: absolute;
     margin-left: 10%;
@@ -52,4 +49,14 @@
 }
 .title {
   margin-left: 5%;
+}
+.button{
+  top: 2%;
+  width: 150%;
+  color: #FF9900;
+  border: 1px solid rgb(192, 166, 118);
+}
+.button:hover{
+  color: white;
+  background-color:#FF9900;
 }

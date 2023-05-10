@@ -100,21 +100,15 @@ export class CreatebookComponent implements OnInit{
        };
        reader.readAsBinaryString(file);
     }
-}
+ }
 
 
   ngOnInit(): void {
   }
   createBook(){
-<<<<<<< HEAD
-    let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary, image:this.image}
-     console.log(params);
-    this.httpService.Post("https://localhost:7191/books/add",params).subscribe((resp)=>{
-=======
     //let params={name:this.name,author:this.author,publishing:this.publishing,category:this.category,summary:this.summary, image:this.image}
     console.log(this.book);
     this.httpService.Post("https://localhost:7191/books/add",this.book).subscribe((resp)=>{
->>>>>>> yigit
       this.reset()
      }, (err) => {
       console.log(err);

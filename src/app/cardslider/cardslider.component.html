@@ -10,7 +10,7 @@
     >
 
     <div class="cards" [ngClass]="{ 'w-100': totalPages === 1 }">
-      <a class="goToAll" [routerLink]="['/book-detail']">Tümüne Git</a>
+      <a class="goToAll" [routerLink]="['/kategori-ayrintisi']">Tümüne Git</a>
       <div
         class="overflow"
         [ngStyle]="{ width: overflowWidth, left: pagePosition }"
@@ -38,16 +38,17 @@
                 class="fav btn btn-light"
                 mat-icon-button
                 color="warn"
+                [routerLink]="['/favoriler']"
                 aria-label="Example icon button with a heart icon"
               >
-                <mat-icon>favorite</mat-icon>
+                <mat-icon >favorite</mat-icon>
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-
+    
     <mat-icon
       class="right"
       *ngIf="totalPages > 1"

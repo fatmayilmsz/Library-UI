@@ -1,22 +1,18 @@
-.author-div{
-    border: 1px solid wheat;
-    height: 300px;
-    width: 100%;
-}
-.author-title{
-    margin-left: 1200;
-    margin-top: 150;
-}
+
 .form-control {
-    width: 400px;
+    width: 450px;
     margin-top: 100px;
-  }
+    border: 1px solid #0000AA;
+    position: absolute;
+    top: 80px;
+}
   .container {
-  margin-top: 5px;
-  margin-left: 240px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 12.5%;
+
 }
 .author-img{
     width: 100%;
@@ -24,3 +20,50 @@
     top: 170;
     opacity: 0.3;
 }
+
+.author-div {
+    border: 1px solid #1f4188;
+    height: 75%;
+    width: 20%;
+    margin-left: 150px;
+    margin-top: 20px;
+    border-radius: 5px;
+  }
+  .title {
+    position: absolute;
+    top: 250;
+    left: 40%;
+  }
+  .categories-list {
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .categories{
+      margin-left: 550px;  
+      width: 60%;
+      position: absolute;
+      top: 300;
+  }
+  .category{
+      width: 100;
+      height: 100;
+      margin: 40;
+      border-radius: 50px;
+      background-color: #5b6a8a;
+      cursor: pointer;
+  }
+  .category:hover{
+      opacity: 0.5;
+      box-shadow: 1 1 1 1;
+  }
+  .category-title{
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-top: 25px;
+    
+  }
+
+  .link{
+    color: black;
+  }

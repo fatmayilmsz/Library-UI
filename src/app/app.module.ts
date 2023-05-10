@@ -40,6 +40,12 @@ import { ReadBookComponent } from './read-book/read-book.component';
 import { ReadingBookComponent } from './reading-book/reading-book.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AuthorComponent } from './author/author.component';
+import { CategoryPageComponent } from './category-page/category-page.component';
+import { DetailAuthorComponent } from './detail-author/detail-author.component';
+import { DetailCategoryComponent } from './detail-category/detail-category.component';
+import { CategoryAuthorComponent } from './category-author/category-author.component';
+import { PublishingComponent } from './publishing/publishing.component';
+import { DetailPublishingComponent } from './detail-publishing/detail-publishing.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +75,13 @@ import { AuthorComponent } from './author/author.component';
     ReadBookComponent,
     ReadingBookComponent,
     FavoritesComponent,
-    AuthorComponent
+    AuthorComponent,
+    CategoryPageComponent,
+    DetailAuthorComponent,
+    DetailCategoryComponent,
+    CategoryAuthorComponent,
+    PublishingComponent,
+    DetailPublishingComponent
   ],
   imports: [
     CommonModule,

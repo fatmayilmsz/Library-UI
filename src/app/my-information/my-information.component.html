@@ -5,7 +5,7 @@
 </div>
 <div class="account-nav  justify-content-center">
     <div class="row nav">
-      <a class="nav-item col-md-3" [routerLink]="['/bilgilerim']" style="color:rgb(192, 166, 118);border-bottom: 2px solid rgb(192, 166, 118);">BİLGİLERİM</a>
+      <a class="nav-item col-md-3" [routerLink]="['/bilgilerim']" style="color:#0000AA;border-bottom: 2px solid #0000AA;">BİLGİLERİM</a>
       <a class="nav-item col-md-3" [routerLink]="['/adreslerim']">ADRESLERİM</a>
       <a class="nav-item col-md-3" [routerLink]="['/okudugum-kitaplar']">OKUDUĞUM KİTAPLAR</a>
       <a class="nav-item col-md-3" [routerLink]="['/su-an-okuduklarim']">ŞU AN BENDE OLAN KİTAPLAR</a>
@@ -38,9 +38,10 @@
       [(ngModel)]="phoneNo"
       placeholder="Cep Telefonu"
     />
-    <button (click)="updateMyData()" class="button" mat-raised-button>
-      Bilgilerimi Güncelle
+    <button class="button btn btn-light" (click)="updateMyData()">
+      Güncelle
     </button>
+
   </div>
   <div class="update-password">
     <h1>Şifre Güncelleme</h1>
@@ -62,11 +63,9 @@
       [(ngModel)]="againNewPassword"
       placeholder="Yeni şifreyi tekrar girin"
     />
-    <button
-      (click)="updatePassword()"
-      class="button"
-      mat-raised-button
-    >
-      Bilgilerimi Güncelle
+
+    <button class="button btn btn-light" (click)="updatePassword()">
+      Güncelle
     </button>
+
   </div>

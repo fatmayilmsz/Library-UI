@@ -6,19 +6,16 @@
 <div class="account-nav  justify-content-center">
     <div class="row nav">
       <a class="nav-item col-md-3" [routerLink]="['/bilgilerim']">BİLGİLERİM</a>
-      <a class="nav-item col-md-3" [routerLink]="['/adreslerim']" style="color:rgb(192, 166, 118);border-bottom: 2px solid rgb(192, 166, 118);">ADRESLERİM</a>
+      <a class="nav-item col-md-3" [routerLink]="['/adreslerim']" style="color:#0000AA;border-bottom: 2px solid #0000AA;">ADRESLERİM</a>
       <a class="nav-item col-md-3" [routerLink]="['/okudugum-kitaplar']">OKUDUĞUM KİTAPLAR</a>
       <a class="nav-item col-md-3" [routerLink]="['/su-an-okuduklarim']">ŞU AN BENDE OLAN KİTAPLAR</a>
     </div>
   </div>
   <div class="add-item">
-    <button
-      class="add-address"
-      mat-raised-button
-      (click)="openAddressPopup()"
-    >
-      + Adres Ekle</button
-    ><br /><br />
+       <button  (click)="openAddressPopup()" class="button btn btn-light">
+      + Adres Ekle
+    </button>
+<br /><br />
   </div>
   <ng-template #addressPopup>
     <div [formGroup]="addAddressForm" class="popup-container">

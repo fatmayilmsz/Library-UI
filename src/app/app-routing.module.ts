@@ -19,6 +19,12 @@ import { ReadBookComponent } from './read-book/read-book.component';
 import { ReadingBookComponent } from './reading-book/reading-book.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { AuthorComponent } from './author/author.component';
+import { CategoryPageComponent } from './category-page/category-page.component';
+import { DetailAuthorComponent } from './detail-author/detail-author.component';
+import { DetailCategoryComponent } from './detail-category/detail-category.component';
+import { CategoryAuthorComponent } from './category-author/category-author.component';
+import { PublishingComponent } from './publishing/publishing.component';
+import { DetailPublishingComponent } from './detail-publishing/detail-publishing.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -37,7 +43,16 @@ const routes: Routes = [
   {path: 'okudugum-kitaplar', component: ReadBookComponent },
   {path: 'su-an-okuduklarim', component: ReadingBookComponent },
   {path: 'favoriler', component: FavoritesComponent },
-  {path: 'yazarlar', component: AuthorComponent }
+  {path: 'yazarlar', component: AuthorComponent },
+  {path: 'kategoriler', component: CategoryPageComponent },
+  {path: 'yazar-ayrintisi', component: DetailAuthorComponent },
+  {path: 'kategori-ayrintisi', component: DetailCategoryComponent },
+  {path: 'kategori-yazarlari', component: CategoryAuthorComponent },
+  {path: 'yayinevleri', component: PublishingComponent },
+  {path: 'yayinevi-ayrintisi', component: DetailPublishingComponent },
+
+
+
 
 
 
