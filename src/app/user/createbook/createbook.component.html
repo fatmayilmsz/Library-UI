@@ -3,7 +3,7 @@
     <input
       class="input book-name"
       formControlName="form_name"
-      [(ngModel)]="name"
+      [(ngModel)]="book!.name"
       type="text"
       placeholder="Kitap Adı"
     />
@@ -22,7 +22,7 @@
     <input
       class="input book-author"
       formControlName="form_author"
-      [(ngModel)]="author"
+      [(ngModel)]="book!.author!.name"
       type="text"
       placeholder="Kitap Yazarı"
     />
@@ -40,7 +40,7 @@
     <input
       class="input book-publishing"
       formControlName="form_publishing"
-      [(ngModel)]="publishing"
+      [(ngModel)]="book!.publishing"
       type="text"
       placeholder="Yayın Evi"
     />
@@ -60,7 +60,7 @@
     <input
       class="input book-category"
       formControlName="form_category"
-      [(ngModel)]="category"
+      [(ngModel)]="book!.category!.name"
       type="text"
       placeholder="Kategori"
     />
@@ -78,7 +78,7 @@
     <input
       class="input book-summary"
       formControlName="form_summary"
-      [(ngModel)]="summary"
+      [(ngModel)]="book!.summary"
       type="text"
       placeholder="Kitap Özeti"
     />
