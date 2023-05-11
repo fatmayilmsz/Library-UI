@@ -19,20 +19,42 @@
           class="card"
           *ngFor="let data of datas"
           [ngStyle]="{ width: cardWidth }"
-          [routerLink]="['/book-detail', data.categoryId, data.id]"
         >
           <div class="book-content">
-            <img class="book-img" [src]="'data:image/png;base64,' + data.image" />
-            <div class="book-text">
+            <img
+              [routerLink]="['/book-detail', data.categoryId, data.id]"
+              class="book-img"
+              [src]="'data:image/png;base64,' + data.image"
+            />
+            <div
+              [routerLink]="['/book-detail', data.categoryId, data.id]"
+              class="book-text"
+            >
               <h3 class="text-center">{{ data.name }}</h3>
-              <h3 class="text-center">{{ data.author }}</h3>
-              <h3 class="text-center">{{ data.publishing }}</h3>
-              <h3 class="text-center">{{ data.category }}</h3>
+              <h3 class="text-center">data.author</h3>
+              <h3 class="text-center">data.publishing</h3>
+              <h3 class="text-center">data.category</h3>
             </div>
             <div class="text-center">
-              <button class="talep btn btn-light ">
+              <button (click)="openAddressPopup()" class="talep btn btn-light">
                 Talep Et
               </button>
+
+              <ng-template #addressPopup>
+                <div class="pop-up">
+                  <h3>
+                    Gecenin Işıkları adlı kitaptan sistemde 5 adet müsaittir.
+                    Talepte bulunmak ister misiniz?
+                  </h3>
+                  <button
+                    (click)="closeAddressPopup()"
+                    class="cancel btn btn-light"
+                  >
+                    İptal
+                  </button>
+                  <button class="talep-yes btn btn-light">Evet</button>
+                </div>
+              </ng-template>
 
               <button
                 class="fav btn btn-light"
@@ -41,14 +63,15 @@
                 [routerLink]="['/favoriler']"
                 aria-label="Example icon button with a heart icon"
               >
-                <mat-icon >favorite</mat-icon>
+                <mat-icon>favorite</mat-icon>
               </button>
+              <h5 class="text-center">Sistemde müsait kitap adedi: 5</h5>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
     <mat-icon
       class="right"
       *ngIf="totalPages > 1"

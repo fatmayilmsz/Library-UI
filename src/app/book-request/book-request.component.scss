@@ -1,0 +1,71 @@
+.title {
+  margin-left: 300px;
+  margin-top: 50px;
+}
+.cards{
+    padding: 5px;
+    width: 70%;
+    margin-left: 250px;
+}
+.card-request{
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+.kart{
+    border-bottom: 1px solid gray;
+    margin-top: 30px;
+}
+.book-request-img {
+  width: 80px;
+  height: 100px;
+}
+.link-name,.link-author{
+    color: black;
+    position: absolute;
+}
+.link-name{
+    top: 30px;
+    left: 100px;
+
+}
+.link-author{
+    top: 50px;
+    left: 100px;
+
+}
+
+.talep {
+    margin-top: 30px;
+    margin-left: 80%;
+    border: 1px solid green;
+    color: green;
+  }
+  .talep:hover {
+    color: white;
+    background-color: green;
+  }
+  .warning{
+    display: flex;
+    justify-content: center;
+  }
+  .alert {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: green;
+    color: #fff;
+    border-radius: 5px;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .show {
+    opacity: 1;
+  }
+  
+  .hide {
+    opacity: 0;
+  }
+  

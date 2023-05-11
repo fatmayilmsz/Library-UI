@@ -25,6 +25,7 @@ import { DetailCategoryComponent } from './detail-category/detail-category.compo
 import { CategoryAuthorComponent } from './category-author/category-author.component';
 import { PublishingComponent } from './publishing/publishing.component';
 import { DetailPublishingComponent } from './detail-publishing/detail-publishing.component';
+import { BookRequestComponent } from './book-request/book-request.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -50,6 +51,7 @@ const routes: Routes = [
   {path: 'kategori-yazarlari', component: CategoryAuthorComponent },
   {path: 'yayinevleri', component: PublishingComponent },
   {path: 'yayinevi-ayrintisi', component: DetailPublishingComponent },
+  {path: 'kitap-istekleri', component: BookRequestComponent },
 
 
 

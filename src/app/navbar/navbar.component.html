@@ -34,16 +34,28 @@
     <a routerLink="/login" *ngIf="isUserLoggedIn() == false" class="book log">
       Giriş Yap/Kayıt Ol</a
     >
+     <button
+      class="account-icon"
+      mat-button
+      [matMenuTriggerFor]="bookRequest"
+    >
+
+    Kitap İstekleri
+    </button>
+    <mat-menu #bookRequest="matMenu">
+      <button mat-menu-item>Kitap isteğiniz yok</button>
+      <button mat-menu-item [routerLink]="['/kitap-istekleri']">X adet kitap isteğiniz var</button>
+    </mat-menu> 
 
     <button
       class="account-icon"
       *ngIf="isUserLoggedIn()"
       mat-button
-      [matMenuTriggerFor]="menu"
+      [matMenuTriggerFor]="myAccount"
     >
       {{ getFullName() }}
     </button>
-    <mat-menu #menu="matMenu">
+    <mat-menu #myAccount="matMenu">
       <button [routerLink]="['/bilgilerim']" mat-menu-item>Hesabım</button>
       <button mat-menu-item [routerLink]="['/favoriler']">Favoriler</button>
       <button mat-menu-item [routerLink]="['/okudugum-kitaplar']">Okuduğum Kitaplar</button>

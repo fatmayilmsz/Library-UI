@@ -1,5 +1,7 @@
 import { Component,HostListener, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
+import { MatDialog } from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-cardslider',
@@ -7,7 +9,8 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./cardslider.component.scss']
 })
 export class CardsliderComponent implements OnInit{
-  constructor(private httpService:ServiceService){}
+  constructor(private httpService:ServiceService,private dialog: MatDialog){}
+
   datas:any=[];
 
   private _name : string="";
@@ -63,8 +66,9 @@ export class CardsliderComponent implements OnInit{
   overflowWidth: string="";
   cardWidth: string="";
   containerWidth: number=0;
-  @ViewChild("container", { static: true, read: ElementRef })
-  container!: ElementRef;
+  @ViewChild("container", { static: true, read: ElementRef }) container!: ElementRef;
+  @ViewChild('addressPopup') addressPopup:any;
+
   @HostListener("window:resize") windowResize() {
     let newCardsPerPage = this.getCardsPerPage();
     if (newCardsPerPage != this.cardsPerPage) {
@@ -76,6 +80,17 @@ export class CardsliderComponent implements OnInit{
       }
     }
   }
+
+  openAddressPopup() {
+    const dialogRef = this.dialog.open(this.addressPopup);
+    dialogRef.afterClosed().subscribe(result => {
+      // Burada pop-up kapandığında yapılacak işlemleri ekleyebilirsiniz.
+    });
+    }
+    
+    closeAddressPopup() {
+      this.dialog.closeAll();
+    }
 
   ngOnInit() {
     this.cardsPerPage = this.getCardsPerPage();

@@ -46,6 +46,7 @@ import { DetailCategoryComponent } from './detail-category/detail-category.compo
 import { CategoryAuthorComponent } from './category-author/category-author.component';
 import { PublishingComponent } from './publishing/publishing.component';
 import { DetailPublishingComponent } from './detail-publishing/detail-publishing.component';
+import { BookRequestComponent } from './book-request/book-request.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { DetailPublishingComponent } from './detail-publishing/detail-publishing
     DetailCategoryComponent,
     CategoryAuthorComponent,
     PublishingComponent,
-    DetailPublishingComponent
+    DetailPublishingComponent,
+    BookRequestComponent
   ],
   imports: [
     CommonModule,

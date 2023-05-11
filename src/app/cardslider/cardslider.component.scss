@@ -16,7 +16,7 @@
   transition: left 0.5s ease-in-out;
 }
 .card {
-  height: 400px;
+  height: 460px;
   border-radius: 5px;
   display: inline-block;
   margin-right: 10px;
@@ -24,15 +24,37 @@
   border: 1px solid rgb(231, 220, 220);
   cursor: pointer;
 }
-.talep{
+.talep {
   border: 1px solid rgb(192, 166, 118);
-  color: #FF9900;
+  color: #ff9900;
 }
-.talep:hover{
+.talep:hover {
   color: white;
-  background-color:#FF9900;
+  background-color: #ff9900;
 }
-
+.talep-yes {
+  margin-top: 40px;
+  border: 1px solid rgb(192, 166, 118);
+  color: #ff9900;
+}
+.talep-yes:hover {
+  color: white;
+  background-color: #ff9900;
+}
+.cancel {
+  margin-left: 250px;
+  margin-top: 40px;
+margin-right: 10px;
+  border: 1px solid red;
+  color: red;
+}
+.cancel:hover {
+  color: white;
+  background-color: red;
+}
+.pop-up {
+  padding: 30px;
+}
 .no-right-margin {
   margin-right: 0px;
 }
@@ -82,18 +104,18 @@ h1 {
   text-align: center;
   margin-top: 10px;
 }
-.text-center:hover{
+.text-center:hover {
   color: gray;
 }
 h3 {
   margin: 0px 0 -11px;
 }
-.goToAll{
+.goToAll {
   display: block;
   margin-left: 950px;
   color: gray;
   text-decoration: underline;
 }
-.goToAll:hover{
+.goToAll:hover {
   text-decoration: none;
 }
