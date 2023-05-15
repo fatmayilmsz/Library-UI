@@ -95,8 +95,7 @@
     margin: 0px 0 -11px;
   }
   .title {
-    display: flex;
-    justify-content: center;
-    margin-top: -560px;
-    margin-left: -250px;
+    position: absolute;
+    top: 180px;
+    left: 560px;
   }

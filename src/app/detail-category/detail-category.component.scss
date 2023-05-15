@@ -10,10 +10,9 @@
     color: black;
   }
   .title {
-    display: flex;
-    justify-content: center;
-    margin-top: -560px;
-    margin-left: -250px;
+    position: absolute;
+    top: 180px;
+    left: 560px;
   }
   .categories-list {
     margin-left: 20px;
