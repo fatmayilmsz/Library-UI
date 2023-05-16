@@ -47,6 +47,7 @@ import { CategoryAuthorComponent } from './category-author/category-author.compo
 import { PublishingComponent } from './publishing/publishing.component';
 import { DetailPublishingComponent } from './detail-publishing/detail-publishing.component';
 import { BookRequestComponent } from './book-request/book-request.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -101,6 +102,7 @@ import { BookRequestComponent } from './book-request/book-request.component';
     HttpClientModule,
     RouterModule,
     NgbModule,
+    MatSidenavModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
