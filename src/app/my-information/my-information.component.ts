@@ -12,6 +12,9 @@ export class MyInformationComponent implements OnInit{
   ngOnInit() {
     this.getMyDatas()
   }
+  //kurumun var olan pc labaratuardan yararlanmak + puan getirecek. Sistemin iyileştirilmesi için anket yapılması sonuçları değerlendir ekstra olarak. Sistem sürekli olarak güncellenecektir bölümü ekleyin. 4.nölüm düzenlensin
+  //diyagram çzilcek sunucularda nasıl tutulcak görsellerle anly ui görselleri kullan kim ne yaptı yaz. okuldaki olanaklardan yararlan. ilk rapor 4.bölümdeki gibi yaz
+  //kaynak bul + puan. istatiksel veriler de yayınlanıcak en cok kitap okuyan kişiye kitap hediye edilcektir.
 
 
   firstName:any=""
@@ -19,7 +22,7 @@ export class MyInformationComponent implements OnInit{
   email:any=""
   phoneNo:any=""
   updateMyData(){
-    let params={firstName:this.firstName,lastName:this.lastName,email:this.email}
+    let params={firstName:this.firstName,lastName:this.lastName,email:this.email,phoneNo:this.phoneNo}
     console.log(params)
     this.httpService.Put("https://localhost:7191/users/update",params).subscribe((resp)=>{},(err)=>{alert(err.message)})
   }

@@ -1,6 +1,7 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, OperatorFunction, Subject, debounceTime, distinctUntilChanged, filter, map, merge } from 'rxjs';
+import { ServiceService } from '../service.service';
 
 const states = [
   'Romantik',
@@ -68,9 +69,13 @@ const states = [
   templateUrl: './publishing.component.html',
   styleUrls: ['./publishing.component.scss']
 })
-export class PublishingComponent {
+export class PublishingComponent implements OnInit{
 	model: any;
-
+  datas:any=[];
+  constructor(private httpService:ServiceService){}
+  ngOnInit() {
+    this.getPublishing()
+  }
   @ViewChild('instance', { static: true }) instance!: NgbTypeahead;
 	focus$ = new Subject<string>();
 	click$ = new Subject<string>();
@@ -86,5 +91,11 @@ export class PublishingComponent {
 			),
 		);
 	};
+
+  getPublishing(){
+    this.httpService.Get("https://localhost:7191/publishers","").subscribe((resp)=>{
+      this.datas=resp
+    })
+  }
 
 }

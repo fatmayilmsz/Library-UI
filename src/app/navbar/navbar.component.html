@@ -35,12 +35,12 @@
       Giriş Yap/Kayıt Ol</a
     >
      <button
-      class="account-icon"
+     *ngIf="isUserLoggedIn()"
       mat-button
       [matMenuTriggerFor]="bookRequest"
     >
 
-    Kitap İstekleri
+    ▾Kitap İstekleri
     </button>
     <mat-menu #bookRequest="matMenu">
       <button mat-menu-item>Kitap isteğiniz yok</button>
@@ -53,7 +53,7 @@
       mat-button
       [matMenuTriggerFor]="myAccount"
     >
-      {{ getFullName() }}
+    ▾{{ getFullName() }}
     </button>
     <mat-menu #myAccount="matMenu">
       <button [routerLink]="['/bilgilerim']" mat-menu-item>Hesabım</button>

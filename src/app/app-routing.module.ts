@@ -30,7 +30,7 @@ import { BookRequestComponent } from './book-request/book-request.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'home', component: HomePageComponent },
-  {path: 'book-detail/:category/:id', component: DetailbookComponent },
+  {path: 'book-detail/:id', component: DetailbookComponent },
   {path: 'add-book', component: CreatebookComponent, canActivate: [AuthGuard]},
   {path: 'all-book', component: AllbookComponent },
   {path: 'admin', component: AdminComponent},
@@ -46,11 +46,11 @@ const routes: Routes = [
   {path: 'favoriler', component: FavoritesComponent },
   {path: 'yazarlar', component: AuthorComponent },
   {path: 'kategoriler', component: CategoryPageComponent },
-  {path: 'yazar-ayrintisi', component: DetailAuthorComponent },
+  {path: 'yazar-ayrintisi/:id', component: DetailAuthorComponent },
   {path: 'kategori-ayrintisi', component: DetailCategoryComponent },
   {path: 'kategori-yazarlari', component: CategoryAuthorComponent },
   {path: 'yayinevleri', component: PublishingComponent },
-  {path: 'yayinevi-ayrintisi', component: DetailPublishingComponent },
+  {path: 'yayinevi-ayrintisi/:id', component: DetailPublishingComponent },
   {path: 'kitap-istekleri', component: BookRequestComponent },
 
 

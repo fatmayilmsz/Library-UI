@@ -112,4 +112,29 @@
         top: 250;
         left: 40%;
       }
+      .categories{
+        margin-left: 550px;  
+        width: 60%;
+        position: absolute;
+        top: 300;
+    }
+    .category{
+        width: 100;
+        height: 100;
+        margin: 40;
+        border-radius: 50px;
+        background-color: #5b6a8a;
+        cursor: pointer;
+    }
+    .category:hover{
+        opacity: 0.5;
+        box-shadow: 1 1 1 1;
+    }
+    .category-title{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: 25px;
       
+    }
+  

@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, OperatorFunction, Subject, debounceTime, distinctUntilChanged, filter, map, merge } from 'rxjs';
 import { AuthService } from '../services/auth.service';
+import { ServiceService } from '../service.service';
 const states = [
   'Romantik',
   'Dram',
@@ -69,8 +70,13 @@ const states = [
   templateUrl: './author.component.html',
   styleUrls: ['./author.component.scss']
 })
-export class AuthorComponent {
+export class AuthorComponent implements OnInit{
 	model: any;
+  datas:any=[];
+  constructor(private httpService:ServiceService){}
+  ngOnInit() {
+    this.getAuthors()
+  }
 
   @ViewChild('instance', { static: true }) instance!: NgbTypeahead;
 	focus$ = new Subject<string>();
@@ -87,5 +93,10 @@ export class AuthorComponent {
 			),
 		);
 	};
+  getAuthors(){
+    this.httpService.Get("https://localhost:7191/authors","").subscribe((resp)=>{
+      this.datas=resp
+    })
+  }
 
 }
