@@ -73,9 +73,11 @@ const states = [
 export class AuthorComponent implements OnInit{
 	model: any;
   datas:any=[];
+  getDatasCategory:any=[];
   constructor(private httpService:ServiceService){}
   ngOnInit() {
     this.getAuthors()
+    this.getCategories()
   }
 
   @ViewChild('instance', { static: true }) instance!: NgbTypeahead;
@@ -96,6 +98,11 @@ export class AuthorComponent implements OnInit{
   getAuthors(){
     this.httpService.Get("https://localhost:7191/authors","").subscribe((resp)=>{
       this.datas=resp
+    })
+  }
+  getCategories(){
+    this.httpService.Get("https://localhost:7191/categories","").subscribe((resp)=>{
+      this.getDatasCategory=resp
     })
   }
 

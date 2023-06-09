@@ -2,26 +2,9 @@
     <div class="categories-list">
         <h3 class="categories-title"><b>Kategoriler</b></h3>
         <hr style="margin-right: 20px;">
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>   
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>   
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>   
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Komedi</a><br>
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a><br>   
-        <a class="link" [routerLink]="['/kategori-ayrintisi']">Macera</a>
+        <div *ngFor="let data of getDatasCategory">
+          <a class="link" [routerLink]="['/kategori-ayrintisi']">{{data.name}}</a><br>
+        </div>
     </div>
   </div>
   <h2 class="title">

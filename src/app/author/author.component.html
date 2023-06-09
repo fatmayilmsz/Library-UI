@@ -2,27 +2,10 @@
   <div class="categories-list">
     <h3 class="categories-title"><b>Kategori ile arayın</b></h3>
     <hr style="margin-right: 20px" />
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>   
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>   
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>   
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Komedi</a><br>
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a><br>   
-    <a class="link" [routerLink]="['/kategori-yazarlari']">Macera</a>
+    <div *ngFor="let data of getDatasCategory"> 
+      <a class="link" [routerLink]="['/kategori-yazarlari', data.id]">{{data.name}}</a><br>
+    </div>
+
 </div>
 </div>
 <h2 class="title"><b>Önerilen Yazarlar</b></h2>

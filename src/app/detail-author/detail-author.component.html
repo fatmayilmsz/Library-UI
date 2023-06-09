@@ -1,9 +1,8 @@
 <div *ngIf="author">
   <div class="author-div">
     <div class="categories-list">
-        <div class="author-img">
-                <h1 style="text-align: center; margin-top: 50px;">150x150 resim</h1>
-        </div>
+      <img class="author-img" [src]="'data:image/png;base64,'">
+        
         <h3 class="categories-title"><b>{{author.name}}</b></h3>
         <hr style="margin-right: 20px;">
       <a>Hakkında: Lorem ipsum lorem ipsum lorem ipsum şorem ipsum horem ipsum oorem ipsum torem ipsum</a><br><br>

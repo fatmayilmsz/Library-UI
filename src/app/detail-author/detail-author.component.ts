@@ -9,6 +9,8 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./detail-author.component.scss']
 })
 export class DetailAuthorComponent implements OnInit{
+  datas:any=[];
+
   public author:Author|null = null;
   constructor(private route: ActivatedRoute,private httpService:ServiceService) 
   { 
@@ -17,6 +19,11 @@ export class DetailAuthorComponent implements OnInit{
     this.httpService.Get(`https://localhost:7191/authors/${this.route.snapshot.paramMap.get('id')}`, "").subscribe((resp) => {
       this.author = resp as Author;
     });
+  }
+  getAuthors(){
+    this.httpService.Get("https://localhost:7191/authors","").subscribe((resp)=>{
+      this.datas=resp
+    })
   }
 
 }

@@ -39,10 +39,11 @@
           formControlName="form_title"
         /> </mat-form-field
       ><br />
+
       <mat-form-field appearance="outline">
         <mat-label>İl</mat-label>
         <mat-select [(ngModel)]="city" formControlName="form_city" required>
-          <mat-option *ngFor="let i of cities" value="i">{{ i }}</mat-option>
+          <mat-option *ngFor="let il of cities" [value]="il">{{ il }}</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="outline">
@@ -52,9 +53,10 @@
           formControlName="form_district"
           required
         >
-          <mat-option value="i">İlçe</mat-option>
+          <mat-option *ngFor="let ilce of districts[city]" [value]="ilce">{{ ilce }}</mat-option>
         </mat-select> </mat-form-field
-      ><br />
+      >
+      <br />
       <mat-form-field appearance="outline">
         <mat-label>Mahalle / Köy</mat-label>
         <input
@@ -127,8 +129,6 @@
       >
         Kaydet</button
       ><br />
-      <mat-checkbox type="checkbox" [color]="color"
-        >Bu adresi fatura adresi olarak da kullan.</mat-checkbox
-      ><br />
+      <br />
     </div>
   </ng-template>
