@@ -155,14 +155,7 @@ export class MyAddressComponent implements OnInit{
   color:ThemePalette= 'primary';
   @ViewChild('addressPopup') addressPopup:any;
   ngOnInit() {
-    // this.getBooks()
   }
-  // getBooks(){
-  //   this.httpService.Get("https://localhost:7191/books","").subscribe((resp)=>{
-  //     this.datas=resp
-  //     this.totalCards = this.datas.length;
-  //   })
-  // }
 
   openAddressPopup() {
 	const dialogRef = this.dialog.open(this.addressPopup);
@@ -170,7 +163,7 @@ export class MyAddressComponent implements OnInit{
 	  // Burada pop-up kapandığında yapılacak işlemleri ekleyebilirsiniz.
 	});
   }
-  
+
   closeAddressPopup() {
     this.dialog.closeAll();
   }
